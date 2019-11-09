@@ -7,13 +7,13 @@
             <li class="collection-item">Mare ID#: {{mare_id}}</li>
             <li class="collection-item">Color: {{color}}</li>
             <li class="collection-item">Age: {{age}}</li>
-            <li class="collection-item">Description:{{description}}</li>
+            <li class="collection-item">Description: {{description}}</li>
             <li class="collection-item">Owner: {{owner}}</li>
             <li class="collection-item">Agent: {{agent}}</li>
-            <li class="collection-item">Agent's Phone Number {{agent_phone}}</li>
+            <li class="collection-item">Agent's Phone Number: {{agent_phone}}</li>
             <li class="collection-item">Address: {{address}}</li>
             <li class="collection-item">Home Phone: {{home_phone}}</li>
-            <li class="collection-item">Work Phone {{work_phone}}</li>
+            <li class="collection-item">Work Phone: {{work_phone}}</li>
             <li class="collection-item">Fax: {{fax}}</li>
             <li class="collection-item">Cell: {{cell}}</li>
             <li class="collection-item">Email: {{email}}</li>
@@ -21,9 +21,9 @@
             <li class="collection-item">Tentative Foaling Date: {{tentative_foal_date}}</li>
             <li class="collection-item">In Foal To: {{in_foal_to}}</li>
             <li class="collection-item">Stallion: {{stallion}}</li>
-            <li class="collection-item">Stallion Contact Name {{stallion_contact}}</li>
+            <li class="collection-item">Stallion Contact Name: {{stallion_contact}}</li>
             <li class="collection-item">Stallion Phone Number: {{stallion_phone}}</li>
-            <li class="collection-item">Comments(Previous Repro Problems,Previous Health Problems): {{comments}}</li>
+            <li class="collection-item">Comments(Previous Repro Problems, Previous Health Problems): {{comments}}</li>
             <li class="collection-item">Uterine Cysts: {{uterine_cysts}}</li>
         </ul>
 

@@ -7,7 +7,7 @@
             </li>
             <li v-for="mare in mares" v-bind:key="mare.id" class="collection-item">
                 
-                {{mare.mare_id}}:{{mare.name}}
+                <h5>Mare ID#: {{mare.mare_id}} <span>Mare Name: {{mare.name}}</span></h5>
                <router-link class="secondary-content" v-bind:to="{name:'view-mare', params: {mare_id: mare.mare_id}}">
                    <i class="fa fa-eye"></i>
                </router-link>
@@ -47,3 +47,9 @@ export default {
     }
 }
 </script>
+
+<style>
+span {
+    margin-left: 50px;
+}
+</style>
