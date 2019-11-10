@@ -17,7 +17,7 @@
             <li class="collection-item">Bred/Treatment: {{bred_treatments}}</li>
             <li class="collection-item">Initials: {{initials}}</li>
         </ul>
-        
+        <button @click="deleteHealthRecord2" class="btn-floating btn-large red"><i class="fa fa-times"></i></button>
         <div class="fixed-action-btn">
             <router-link to="/" class="btn-floating btn-large grey"><i class="fa fa-arrow-left"></i></router-link>
        </div>
@@ -84,6 +84,17 @@ export default {
                     this.initials = doc.data().initials
                 })
             })
+        },
+        deleteHealthRecord2 () {
+            if(confirm('Are you sure?')) {
+                db.collection('horse_health2').where('mare_id', '==', this.$route.params.mare_id).get()
+                .then(querySnapshot => {
+                    querySnapshot.forEach(doc => {
+                        doc.ref.delete()
+                        this.$router.push('/')
+                    })
+                })
+            }
         }
     }
 }
