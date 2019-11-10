@@ -215,7 +215,7 @@ export default {
                         this.$router.push('/')
                     })
                 })
-                /*db.collection('horse_health').where('mare_id', '==', this.$route.params.mare_id).get()
+                db.collection('horse_health').where('mare_id', '==', this.$route.params.mare_id).get()
                 .then(querySnapshot => {
                     querySnapshot.forEach(doc => {
                         doc.ref.delete()
@@ -228,7 +228,7 @@ export default {
                         doc.ref.delete()
                         this.$router.push('/')
                     })
-                })*/
+                })
             }
         }
     }
