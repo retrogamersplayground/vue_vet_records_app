@@ -135,11 +135,12 @@
                     <label>Uterine Cysts</label>
                 </div>
             </div>
-
-            <button type="submit" class="btn blue">Submit</button>
-            <router-link to="/" class="btn grey">Back</router-link>
+            <button type="submit" class="btn-floating btn-large green"><i class="fa fa-check"></i></button>
         </form>
        </div>
+       <div class="fixed-action-btn">
+            <router-link to="/" class="btn-floating btn-large grey"><i class="fa fa-arrow-left"></i></router-link>
+        </div>
     </div>
 </template>
 

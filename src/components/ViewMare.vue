@@ -25,15 +25,17 @@
             <li class="collection-item">Stallion Phone Number: {{stallion_phone}}</li>
             <li class="collection-item">Comments(Previous Repro Problems, Previous Health Problems): {{comments}}</li>
             <li class="collection-item">Uterine Cysts: {{uterine_cysts}}</li>
+            
         </ul>
-
-        <router-link to="/" class="btn grey">Back</router-link>
-        <button @click="deleteMare" class="btn red">Delete</button>
-
+        
+        <button @click="deleteMare" class="btn-floating btn-large red"><i class="fa fa-times"></i></button>
+        
         <div class="fixed-action-btn">
-           <router-link v-bind:to="{name: 'edit-mare', params: {mare_id: mare_id}}" class="btn-floating btn-large red">
+            <router-link to="/" class="btn-floating btn-large grey"><i class="fa fa-arrow-left"></i></router-link>
+           
+            <router-link v-bind:to="{name: 'edit-mare', params: {mare_id: mare_id}}" class="btn-floating btn-large red">
             <i class="fa fa-pencil"></i>
-           </router-link>
+            </router-link>
        </div>
     </div>
 </template>
@@ -44,9 +46,9 @@ export default {
     name: 'view-mare',
     data () {
         return {
-           mare_id: null,
-           name: null,
-           color: null,
+            mare_id: null,
+            name: null,
+            color: null,
             age: null,
             description: null,
             owner: null,
@@ -65,7 +67,20 @@ export default {
             stallion_contact: null,
             stallion_phone: null,
             comments: null,
-            uterine_cysts: null
+            uterine_cysts: null,
+            hr_date: null,
+            deworm: null,
+            vaccination: null,
+            hr_comment: null,
+            hr2_date: null,
+            l_ovary: null,
+            r_ovary: null,
+            uterine_edema: null,
+            uterine_fluid: null,
+            ut_ct_tone: null,
+            teasing: null,
+            bred_treatments: null,
+            initials: null
         }
     },
     beforeRouteEnter(to, from, next) {
@@ -95,6 +110,38 @@ export default {
                     vm.stallion_phone = doc.data().stallion_phone
                     vm.comments = doc.data().comments
                     vm.uterine_cysts = doc.data().uterine_cysts
+                })
+            })
+        }),
+        db.collection('horse_health').where('mare_id', '==', to.params.mare_id).get()
+        .then(querySnapshot => {
+            querySnapshot.forEach(doc => {
+                next(vm => {
+                    vm.mare_id = doc.data().mare_id
+                    vm.name = doc.data().name
+                    vm.hr_date = doc.data().hr_date
+                    vm.deworm = doc.data().deworm
+                    vm.vaccination = doc.data().vaccination
+                    vm.hr_comments = doc.data().hr_comments
+                })
+            })
+        }),
+        db.collection('horse_health2').where('mare_id', '==', to.params.mare_id).get()
+        .then(querySnapshot => {
+            querySnapshot.forEach(doc => {
+                next(vm => {
+                    vm.mare_id = doc.data().mare_id
+                    vm.name = doc.data().name
+                    vm.hr2_date = doc.data().hr2_date
+                    vm.l_ovary = doc.data().l_ovary
+                    vm.r_ovary = doc.data().r_ovary
+                    vm.uterine_edema = doc.data().uterine_edema
+                    vm.uterine_fluid = doc.data().uterine_fluid
+                    vm.ut_ct_tone = doc.data().ut_ct_tone
+                    vm.teasing = doc.data().teasing
+                    vm.bred_treatments = doc.data().bred_treatments
+                    vm.initials = doc.data().initials
+                    
                 })
             })
         })
@@ -130,6 +177,33 @@ export default {
                     this.comments = doc.data().comments
                     this.uterine_cysts = doc.data().uterine_cysts
                 })
+            }),
+            db.collection('horse_health').where('mare_id', '==', this.$route.params.mare_id).get()
+            .then(querySnapshot => {
+                querySnapshot.forEach(doc => {
+                    this.mare_id = doc.data().mare_id
+                    this.name = doc.data().name
+                    this.hr_date = doc.data().hr_date
+                    this.deworm = doc.data().deworm
+                    this.vaccination = doc.data().vaccination
+                    this.hr_comments = doc.data().hr_comments
+                })
+            }),
+            db.collection('horse_health2').where('mare_id', '==', this.$route.params.mare_id).get()
+            .then(querySnapshot => {
+                querySnapshot.forEach(doc => {
+                    this.mare_id = doc.data().mare_id
+                    this.name = doc.data().name
+                    this.hr2_date = doc.data().hr2_date
+                    this.l_ovary = doc.data().l_ovary
+                    this.r_ovary = doc.data().r_ovary
+                    this.uterine_edema = doc.data().uterine_edema
+                    this.uterine_fluid = doc.data().uterine_fluid
+                    this.ut_ct_tone = doc.data().ut_ct_tone
+                    this.teasing = doc.data().teasing
+                    this.bred_treatments = doc.data().bred_treatments
+                    this.initials = doc.data().initials
+                })
             })
         },
         deleteMare () {
@@ -141,6 +215,20 @@ export default {
                         this.$router.push('/')
                     })
                 })
+                /*db.collection('horse_health').where('mare_id', '==', this.$route.params.mare_id).get()
+                .then(querySnapshot => {
+                    querySnapshot.forEach(doc => {
+                        doc.ref.delete()
+                        this.$router.push('/')
+                    })
+                }),
+                db.collection('horse_health2').where('mare_id', '==', this.$route.params.mare_id).get()
+                .then(querySnapshot => {
+                    querySnapshot.forEach(doc => {
+                        doc.ref.delete()
+                        this.$router.push('/')
+                    })
+                })*/
             }
         }
     }
