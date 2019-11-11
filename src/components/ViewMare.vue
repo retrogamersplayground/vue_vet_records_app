@@ -8,6 +8,8 @@
             <li class="collection-item">Color: {{color}}</li>
             <li class="collection-item">Age: {{age}}</li>
             <li class="collection-item">Description: {{description}}</li>
+            <li class="collection-item">Arrival: {{arrival}}</li>
+            <li class="collection-item">Depart: {{depart}}</li>
             <li class="collection-item">Owner: {{owner}}</li>
             <li class="collection-item">Agent: {{agent}}</li>
             <li class="collection-item">Agent's Phone Number: {{agent_phone}}</li>
@@ -51,6 +53,8 @@ export default {
             color: null,
             age: null,
             description: null,
+            arrival: null,
+            depart: null,
             owner: null,
             agent: null,
             agent_phone: null,
@@ -68,19 +72,6 @@ export default {
             stallion_phone: null,
             comments: null,
             uterine_cysts: null,
-            hr_date: null,
-            deworm: null,
-            vaccination: null,
-            hr_comment: null,
-            hr2_date: null,
-            l_ovary: null,
-            r_ovary: null,
-            uterine_edema: null,
-            uterine_fluid: null,
-            ut_ct_tone: null,
-            teasing: null,
-            bred_treatments: null,
-            initials: null
         }
     },
     beforeRouteEnter(to, from, next) {
@@ -93,6 +84,8 @@ export default {
                     vm.color = doc.data().color
                     vm.age = doc.data().age
                     vm.description = doc.data().description
+                    vm.arrival = doc.data().arrival
+                    vm.depart = doc.data().depart
                     vm.owner = doc.data().owner
                     vm.agent = doc.data().agent
                     vm.agent_phone = doc.data().agent_phone
@@ -112,38 +105,6 @@ export default {
                     vm.uterine_cysts = doc.data().uterine_cysts
                 })
             })
-        }),
-        db.collection('horse_health').where('mare_id', '==', to.params.mare_id).get()
-        .then(querySnapshot => {
-            querySnapshot.forEach(doc => {
-                next(vm => {
-                    vm.mare_id = doc.data().mare_id
-                    vm.name = doc.data().name
-                    vm.hr_date = doc.data().hr_date
-                    vm.deworm = doc.data().deworm
-                    vm.vaccination = doc.data().vaccination
-                    vm.hr_comments = doc.data().hr_comments
-                })
-            })
-        }),
-        db.collection('horse_health2').where('mare_id', '==', to.params.mare_id).get()
-        .then(querySnapshot => {
-            querySnapshot.forEach(doc => {
-                next(vm => {
-                    vm.mare_id = doc.data().mare_id
-                    vm.name = doc.data().name
-                    vm.hr2_date = doc.data().hr2_date
-                    vm.l_ovary = doc.data().l_ovary
-                    vm.r_ovary = doc.data().r_ovary
-                    vm.uterine_edema = doc.data().uterine_edema
-                    vm.uterine_fluid = doc.data().uterine_fluid
-                    vm.ut_ct_tone = doc.data().ut_ct_tone
-                    vm.teasing = doc.data().teasing
-                    vm.bred_treatments = doc.data().bred_treatments
-                    vm.initials = doc.data().initials
-                    
-                })
-            })
         })
     },
     watch: {
@@ -159,6 +120,8 @@ export default {
                     this.color = doc.data().color
                     this.age = doc.data().age
                     this.description = doc.data().description
+                    this.arrival = doc.data().arrival
+                    this.depart = doc.data().depart
                     this.owner = doc.data().owner
                     this.agent = doc.data().agent
                     this.agent_phone = doc.data().agent_phone
@@ -177,52 +140,11 @@ export default {
                     this.comments = doc.data().comments
                     this.uterine_cysts = doc.data().uterine_cysts
                 })
-            }),
-            db.collection('horse_health').where('mare_id', '==', this.$route.params.mare_id).get()
-            .then(querySnapshot => {
-                querySnapshot.forEach(doc => {
-                    this.mare_id = doc.data().mare_id
-                    this.name = doc.data().name
-                    this.hr_date = doc.data().hr_date
-                    this.deworm = doc.data().deworm
-                    this.vaccination = doc.data().vaccination
-                    this.hr_comments = doc.data().hr_comments
-                })
-            }),
-            db.collection('horse_health2').where('mare_id', '==', this.$route.params.mare_id).get()
-            .then(querySnapshot => {
-                querySnapshot.forEach(doc => {
-                    this.mare_id = doc.data().mare_id
-                    this.name = doc.data().name
-                    this.hr2_date = doc.data().hr2_date
-                    this.l_ovary = doc.data().l_ovary
-                    this.r_ovary = doc.data().r_ovary
-                    this.uterine_edema = doc.data().uterine_edema
-                    this.uterine_fluid = doc.data().uterine_fluid
-                    this.ut_ct_tone = doc.data().ut_ct_tone
-                    this.teasing = doc.data().teasing
-                    this.bred_treatments = doc.data().bred_treatments
-                    this.initials = doc.data().initials
-                })
             })
         },
         deleteMare () {
             if(confirm('Are you sure?')) {
                 db.collection('mares').where('mare_id', '==', this.$route.params.mare_id).get()
-                .then(querySnapshot => {
-                    querySnapshot.forEach(doc => {
-                        doc.ref.delete()
-                        this.$router.push('/')
-                    })
-                })
-                db.collection('horse_health').where('mare_id', '==', this.$route.params.mare_id).get()
-                .then(querySnapshot => {
-                    querySnapshot.forEach(doc => {
-                        doc.ref.delete()
-                        this.$router.push('/')
-                    })
-                }),
-                db.collection('horse_health2').where('mare_id', '==', this.$route.params.mare_id).get()
                 .then(querySnapshot => {
                     querySnapshot.forEach(doc => {
                         doc.ref.delete()

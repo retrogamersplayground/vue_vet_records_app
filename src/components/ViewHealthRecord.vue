@@ -12,7 +12,7 @@
             <li class="collection-item">Vaccination: {{vaccination}}</li>
             <li class="collection-item">Comments: {{hr_comments}}</li>
         </ul>
-        <!--<button @click="deleteMare" class="btn-floating btn-large red"><i class="fa fa-times"></i></button>-->
+        <button @click="deleteHealthRecord" class="btn-floating btn-large red"><i class="fa fa-times"></i></button>
         <div class="fixed-action-btn">
             <router-link to="/" class="btn-floating btn-large grey"><i class="fa fa-arrow-left"></i></router-link>
        </div>
@@ -64,11 +64,9 @@ export default {
                     this.hr_comments = doc.data().hr_comments
                 })
             })
-        }
-    },
-    deleteMare () {
+        },
+        deleteHealthRecord () {
             if(confirm('Are you sure?')) {
-                
                 db.collection('horse_health').where('mare_id', '==', this.$route.params.mare_id).get()
                 .then(querySnapshot => {
                     querySnapshot.forEach(doc => {
@@ -78,5 +76,6 @@ export default {
                 })
             }
         }
+    }
 }
 </script>

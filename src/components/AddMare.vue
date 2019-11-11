@@ -17,121 +17,136 @@
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input type="text" v-model="color" required>
+                    <input type="text" v-model="color">
                     <label>Color</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input type="text" v-model="age" required>
+                    <input type="text" v-model="age">
                     <label>Age</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input type="text" v-model="description" required>
+                    <input type="text" v-model="description">
                     <label>Description</label>
                 </div>
             </div>
+
             <div class="row">
                 <div class="input-field col s12">
-                    <input type="text" v-model="owner" required>
+                    <input type="text" v-model="arrival">
+                    <label>Arrival</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <input type="text" v-model="depart">
+                    <label>Depart</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <input type="text" v-model="owner">
                     <label>Owner</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input type="text" v-model="agent" required>
+                    <input type="text" v-model="agent">
                     <label>Agent</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input type="text" v-model="agent_phone" required>
+                    <input type="text" v-model="agent_phone">
                     <label>Agent's Phone</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input type="text" v-model="address" required>
+                    <input type="text" v-model="address">
                     <label>Address</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input type="text" v-model="home_phone" required>
+                    <input type="text" v-model="home_phone">
                     <label>Home Phone</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input type="text" v-model="work_phone" required>
+                    <input type="text" v-model="work_phone">
                     <label>Work Phone</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input type="text" v-model="fax" required>
+                    <input type="text" v-model="fax">
                     <label>Fax</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input type="text" v-model="cell" required>
+                    <input type="text" v-model="cell">
                     <label>Cell</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input type="email" v-model="email" required>
+                    <input type="email" v-model="email">
                     <label>Email</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input type="text" v-model="insured" required>
+                    <input type="text" v-model="insured">
                     <label>Insured</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input type="text" v-model="tentative_foal_date" required>
+                    <input type="text" v-model="tentative_foal_date">
                     <label>Tentative Foaling Date</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input type="text" v-model="in_foal_to" required>
+                    <input type="text" v-model="in_foal_to">
                     <label>In Foal To</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input type="text" v-model="stallion" required>
+                    <input type="text" v-model="stallion">
                     <label>Stallion</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input type="text" v-model="stallion_contact" required>
+                    <input type="text" v-model="stallion_contact">
                     <label>Stallion Contact Name</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input type="text" v-model="stallion_phone" required>
+                    <input type="text" v-model="stallion_phone">
                     <label>Stallion Phone Number</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input type="text" v-model="comments" required>
+                    <input type="text" v-model="comments">
                     <label>Comments(Previous Repro Problems,Previous Health Problems)</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input type="text" v-model="uterine_cysts" required>
+                    <input type="text" v-model="uterine_cysts">
                     <label>Uterine Cysts</label>
                 </div>
             </div>
@@ -155,6 +170,8 @@ export default {
             color: null,
             age: null,
             description: null,
+            arrival: null,
+            depart: null,
             owner: null,
             agent: null,
             agent_phone: null,
@@ -182,6 +199,8 @@ export default {
                 color: this.color,
                 age: this.age,
                 description: this.description,
+                arrival: this.arrival,
+                depart: this.depart,
                 owner: this.owner,
                 agent: this.agent,
                 agent_phone: this.agent_phone,

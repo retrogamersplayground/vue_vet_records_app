@@ -15,102 +15,112 @@
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input type="text" v-model="color" placeholder="Color" required> 
+                    <input type="text" v-model="color" placeholder="Color"> 
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input type="text" v-model="age" placeholder="Age" required>
+                    <input type="text" v-model="age" placeholder="Age">
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input type="text" v-model="description" placeholder="Description" required>
+                    <input type="text" v-model="description" placeholder="Description">
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input type="text" v-model="owner" placeholder="Owner" required>
+                    <input type="text" v-model="arrival" placeholder="Arrival">
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input type="text" v-model="agent" placeholder="Agent" required>
+                    <input type="text" v-model="depart" placeholder="Depart">
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input type="text" v-model="agent_phone" placeholder="Agent's Phone Number" required>
+                    <input type="text" v-model="owner" placeholder="Owner">
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input type="text" v-model="address" placeholder="Address" required>
+                    <input type="text" v-model="agent" placeholder="Agent">
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input type="text" v-model="home_phone" placeholder="Home Phone" required>
+                    <input type="text" v-model="agent_phone" placeholder="Agent's Phone Number">
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input type="text" v-model="work_phone" placeholder="Work Phone" required>
+                    <input type="text" v-model="address" placeholder="Address">
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input type="text" v-model="fax" placeholder="Fax" required>
+                    <input type="text" v-model="home_phone" placeholder="Home Phone">
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input type="text" v-model="cell" placeholder="Cell" required>
+                    <input type="text" v-model="work_phone" placeholder="Work Phone">
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input type="email" v-model="email" placeholder="Email" required>
+                    <input type="text" v-model="fax" placeholder="Fax">
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input type="text" v-model="insured" placeholder="Insured(True/False)" required>
+                    <input type="text" v-model="cell" placeholder="Cell">
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input type="text" v-model="tentative_foal_date" placeholder="Tentative Foaling Date" required>
+                    <input type="email" v-model="email" placeholder="Email">
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input type="text" v-model="in_foal_to" placeholder="In Foal To" required>
+                    <input type="text" v-model="insured" placeholder="Insured(True/False)">
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input type="text" v-model="stallion" placeholder="Stallion" required>
+                    <input type="text" v-model="tentative_foal_date" placeholder="Tentative Foaling Date">
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input type="text" v-model="stallion_contact" placeholder="Stallion Contact Name" required>
+                    <input type="text" v-model="in_foal_to" placeholder="In Foal To">
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input type="text" v-model="stallion_phone" placeholder="Stallion Phone Number" required>
+                    <input type="text" v-model="stallion" placeholder="Stallion">
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input type="text" v-model="comments" placeholder="Comments(Previous Repro Problems,Previous Health Problems)" required>
+                    <input type="text" v-model="stallion_contact" placeholder="Stallion Contact Name">
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input type="text" v-model="uterine_cysts" placeholder="Uterine Cysts" required>
+                    <input type="text" v-model="stallion_phone" placeholder="Stallion Phone Number">
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input type="text" v-model="comments" placeholder="Comments(Previous Repro Problems,Previous Health Problems)">
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input type="text" v-model="uterine_cysts" placeholder="Uterine Cysts">
                 </div>
             </div>
 
@@ -136,6 +146,8 @@ export default {
             color: null,
             age: null,
             description: null,
+            arrival: null,
+            depart: null,
             owner: null,
             agent: null,
             agent_phone: null,
@@ -155,7 +167,7 @@ export default {
             uterine_cysts: null
         }
     },
-        beforeRouteEnter(to, from, next) {
+    beforeRouteEnter(to, from, next) {
         db.collection('mares').where('mare_id', '==', to.params.mare_id).get()
         .then(querySnapshot => {
             querySnapshot.forEach(doc => {
@@ -165,6 +177,8 @@ export default {
                     vm.color = doc.data().color
                     vm.age = doc.data().age
                     vm.description = doc.data().description
+                    vm.arrival = doc.data().arrival
+                    vm.depart = doc.data().depart
                     vm.owner = doc.data().owner
                     vm.agent = doc.data().agent
                     vm.agent_phone = doc.data().agent_phone
@@ -199,6 +213,8 @@ export default {
                     this.color = doc.data().color
                     this.age = doc.data().age
                     this.description = doc.data().description
+                    this.arrival = doc.data().arrival
+                    this.depart = doc.data().depart
                     this.owner = doc.data().owner
                     this.agent = doc.data().agent
                     this.agent_phone = doc.data().agent_phone
@@ -229,6 +245,8 @@ export default {
                         color: this.color,
                         age: this.age,
                         description: this.description,
+                        arrival: this.arrival,
+                        depart: this.depart,
                         owner: this.owner,
                         agent: this.agent,
                         agent_phone: this.agent_phone,
