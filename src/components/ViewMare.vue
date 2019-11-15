@@ -4,7 +4,7 @@
             <li class="collection-header">
                 Mare Name: <h4>{{name}}</h4>
             </li>
-            <!--<li class="collection-item">Mare ID#: {{mare_id}}</li>
+            <li class="collection-item">Mare ID#: {{mare_id}}</li>
             <li class="collection-item">Color: {{color}}</li>
             <li class="collection-item">Age: {{age}}</li>
             <li class="collection-item">Description: {{description}}</li>
@@ -27,8 +27,8 @@
             <li class="collection-item">Stallion Phone Number: {{stallion_phone}}</li>
             <li class="collection-item">Comments(Previous Repro Problems, Previous Health Problems): {{comments}}</li>
             <li class="collection-item">Uterine Cysts: {{uterine_cysts}}</li>
-            -->
             
+
         </ul>
         
         <button @click="deleteMare" class="btn-floating btn-large red"><i class="fa fa-times"></i></button>
