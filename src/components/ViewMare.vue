@@ -150,6 +150,20 @@ export default {
                         doc.ref.delete()
                         this.$router.push('/')
                     })
+                }),
+                db.collection('horse_health').where('mare_id', '==', this.$route.params.mare_id).get()
+                .then(querySnapshot => {
+                    querySnapshot.forEach(doc => {
+                        doc.ref.delete()
+                        this.$router.push('/')
+                    })
+                }),
+                db.collection('horse_health2').where('mare_id', '==', this.$route.params.mare_id).get()
+                .then(querySnapshot => {
+                    querySnapshot.forEach(doc => {
+                        doc.ref.delete()
+                        this.$router.push('/')
+                    })
                 })
             }
         }
