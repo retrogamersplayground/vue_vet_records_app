@@ -7,11 +7,11 @@
             
                 <h4>Mare Name: {{name}}</h4>
                 <h5>Mare ID#: {{mare_id}}</h5>
-            <ul>
-                <li class="collection-item">Date: {{hr_date}}</li>
-                <li class="collection-item">Deworm: {{deworm}}</li>
-                <li class="collection-item">Vaccination: {{vaccination}}</li>
-                <li class="collection-item">Comments: {{hr_comments}}</li>
+            <ul class="collection-item">
+                <li>Date: {{hr_date}}</li>
+                <li>Deworm: {{deworm}}</li>
+                <li>Vaccination: {{vaccination}}</li>
+                <li>Comments: {{hr_comments}}</li>
             </ul>
         </ul>
         <button @click="deleteHealthRecord" class="btn-floating btn-large red"><i class="fa fa-times"></i></button>
