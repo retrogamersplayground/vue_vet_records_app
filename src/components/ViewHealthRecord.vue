@@ -3,7 +3,7 @@
         
         
         <ul class="collection with-header">
-            <li v-for="mare in healthRecord" v-bind:key="mare.id" class="collection-item">
+            <li v-for="mare in horse_health" v-bind:key="mare.id" class="collection-item">
             
                 <h4>Mare Name: {{name}}</h4>
                 <h5>Mare ID#: {{mare_id}}</h5>
