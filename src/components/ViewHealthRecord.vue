@@ -4,7 +4,7 @@
         
         <ul class="collection with-header">
             <li class="collection-header">
-                Mare Name: <h4>{{name}}</h4>
+                Mare Names: <h4>{{name}}</h4>
             </li>
             <li v-for="mare in mares" v-bind:key="mare.id">
                 <h5>Mare ID#: {{mare_id}}</h5>
