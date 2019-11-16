@@ -1,23 +1,29 @@
 <template>
     <div id="view-health-record2">
         
-        
         <ul class="collection with-header">
             <li class="collection-header">
-                Mare Name: <h4>{{name}}</h4>
+                <h3>Additional Health Records</h3>
             </li>
-            <li class="collection-item">Mare ID#: {{mare_id}}</li>
-            <li class="collection-item">Date: {{hr2_date}}</li>
-            <li class="collection-item">Left Ovary: {{l_ovary}}</li>
-            <li class="collection-item">Right Ovary: {{r_ovary}}</li>
-            <li class="collection-item">Uterine Edema: {{uterine_edema}}</li>
-            <li class="collection-item">Uterin Fluid: {{uterine_fluid}}</li>
-            <li class="collection-item">UT/CT Tone: {{ut_ct_tone}}</li>
-            <li class="collection-item">Teasing: {{teasing}}</li>
-            <li class="collection-item">Bred/Treatment: {{bred_treatments}}</li>
-            <li class="collection-item">Initials: {{initials}}</li>
+            <li v-for="horse_health2 in horse_health2" v-bind:key="horse_health2.id" class="collection-item">
+
+                <h5>Mare ID#: {{horse_health2.mare_id}}</h5>
+                <h5>Mare Name: {{horse_health2.name}}</h5>
+                <ul>
+                    <li>Mare ID#: {{horse_health2.mare_id}}</li>
+                    <li>Date: {{horse_health2.hr2_date}}</li>
+                    <li>Left Ovary: {{horse_health2.l_ovary}}</li>
+                    <li>Right Ovary: {{horse_health2.r_ovary}}</li>
+                    <li>Uterine Edema: {{horse_health2.uterine_edema}}</li>
+                    <li>Uterine Fluid: {{horse_health2.uterine_fluid}}</li>
+                    <li>UT/CT Tone: {{horse_health2.ut_ct_tone}}</li>
+                    <li>Teasing: {{horse_health2.teasing}}</li>
+                    <li>Bred/Treatment: {{horse_health2.bred_treatments}}</li>
+                    <li>Initials: {{horse_health2.initials}}</li>
+                </ul>
+            </li>    
         </ul>
-        <button @click="deleteHealthRecord2" class="btn-floating btn-large red"><i class="fa fa-times"></i></button>
+        <!--<button @click="deleteHealthRecord2" class="btn-floating btn-large red"><i class="fa fa-times"></i></button>-->
         <div class="fixed-action-btn">
             <router-link to="/" class="btn-floating btn-large grey"><i class="fa fa-arrow-left"></i></router-link>
        </div>
@@ -30,72 +36,31 @@ export default {
     name: 'view-health-record2',
     data () {
         return {
-            mare_id: null,
-            name: null,
-            l_ovary: null,
-            r_ovary: null,
-            uterine_edema: null,
-            uterine_fluid: null,
-            ut_ct_tone: null,
-            teasing: null,
-            bred_treatments: null,
-            initials: null
+            horse_health2: []
         }
     },
-    beforeRouteEnter(to, from, next) {
-        db.collection('horse_health2').where('mare_id', '==', to.params.mare_id).get()
-        .then(querySnapshot => {
+    created () {
+        db.collection('horse_health2').where('mare_id', '==', this.$route.params.mare_id).get().then(querySnapshot => {
             querySnapshot.forEach(doc => {
-                next(vm => {
-                    vm.mare_id = doc.data().mare_id
-                    vm.name = doc.data().name
-                    vm.hr2_date = doc.data().hr2_date
-                    vm.l_ovary = doc.data().l_ovary
-                    vm.r_ovary = doc.data().r_ovary
-                    vm.uterine_edema = doc.data().uterine_edema
-                    vm.uterine_fluid = doc.data().uterine_fluid
-                    vm.ut_ct_tone = doc.data().ut_ct_tone
-                    vm.teasing = doc.data().teasing
-                    vm.bred_treatments = doc.data().bred_treatments
-                    vm.initials = doc.data().initials
-                    
-                })
+                
+                const data = {
+                    'id': doc.id,
+                    'mare_id': doc.data().mare_id,
+                    'name': doc.data().name,
+                    'l_ovary': doc.data().l_ovary,
+                    'r_ovary': doc.data().r_ovary,
+                    'uterine_edema': doc.data().uterine_edema,
+                    'uterine_fluid': doc.data().uterine_fluid,
+                    'ut_ct_tone': doc.data().ut_ct_tone,
+                    'teasing': doc.data().teasing,
+                    'bred_treatment': doc.data().bred_treatment,
+                    'initials': doc.data().initials
+
+                }
+                this.horse_health2.push(data)
+                console.log(doc.data())
             })
         })
-    },
-    watch: {
-        '$route': 'fetchData'
-    },
-    methods: {
-        fetchData () {
-            db.collection('horse_health2').where('mare_id', '==', this.$route.params.mare_id).get()
-            .then(querySnapshot => {
-                querySnapshot.forEach(doc => {
-                    this.mare_id = doc.data().mare_id
-                    this.name = doc.data().name
-                    this.hr2_date = doc.data().hr2_date
-                    this.l_ovary = doc.data().l_ovary
-                    this.r_ovary = doc.data().r_ovary
-                    this.uterine_edema = doc.data().uterine_edema
-                    this.uterine_fluid = doc.data().uterine_fluid
-                    this.ut_ct_tone = doc.data().ut_ct_tone
-                    this.teasing = doc.data().teasing
-                    this.bred_treatments = doc.data().bred_treatments
-                    this.initials = doc.data().initials
-                })
-            })
-        },
-        deleteHealthRecord2 () {
-            if(confirm('Are you sure?')) {
-                db.collection('horse_health2').where('mare_id', '==', this.$route.params.mare_id).get()
-                .then(querySnapshot => {
-                    querySnapshot.forEach(doc => {
-                        doc.ref.delete()
-                        this.$router.push('/')
-                    })
-                })
-            }
-        }
     }
 }
 </script>
