@@ -6,7 +6,7 @@
             <li class="collection-header">
                 Mare Name: <h4>{{name}}</h4>
             </li>
-            <li v-for="mare in horse_health" v-bind:key="mare.id">
+            <li v-for="horse_health in horse_health" v-bind:key="horse_health.id">
                 <h5>Mare ID#: {{mare_id}}</h5>
                 <h5>Date: {{hr_date}}</h5>
                 <h5>Deworm: {{deworm}}</h5>
