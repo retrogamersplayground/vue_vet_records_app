@@ -8,7 +8,7 @@
             </li>
             <li v-for="mare in horse_health" v-bind:key="mare.id">
                 <h5>Mare ID#: {{mare_id}}</h5>
-                <h5>Date: {{horse_health.hr_date}}</h5>
+                <h5>Date: {{mare.hr_date}}</h5>
                 <h5>Deworm: {{deworm}}</h5>
                 <h5>Vaccination: {{vaccination}}</h5>
                 <h5>Comments: {{hr_comments}}</h5>
