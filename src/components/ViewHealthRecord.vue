@@ -34,7 +34,7 @@ export default {
     },
     created () {
         
-        db.collection('horse_health').where('mare_id', '==', to.params.mare_id).orderBy('mare_id').get().then(querySnapshot => {
+        db.collection('horse_health').where('mare_id', '==', this.$route.params.mare_id).get().then(querySnapshot => {
             querySnapshot.forEach(doc => {
                 
                 const data = {
@@ -48,6 +48,7 @@ export default {
 
                 }
                 this.horse_health.push(data)
+                console.log(doc.data())
             })
         })
     },
