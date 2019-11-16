@@ -6,12 +6,13 @@
             <li class="collection-header">
                 Mare Name: <h4>{{name}}</h4>
             </li>
-            
-            <li class="collection-item">Mare ID#: {{mare_id}}</li>
-            <li class="collection-item">Date: {{hr_date}}</li>
-            <li class="collection-item">Deworm: {{deworm}}</li>
-            <li class="collection-item">Vaccination: {{vaccination}}</li>
-            <li class="collection-item">Comments: {{hr_comments}}</li>
+            <li v-for="mare in horse_health" v-bind:key="mare.id">
+                <h5>Mare ID#: {{mare_id}}</h5>
+                <h5>Date: {{hr_date}}</h5>
+                <h5>Deworm: {{deworm}}</h5>
+                <h5>Vaccination: {{vaccination}}</h5>
+                <h5>Comments: {{hr_comments}}</h5>
+            </li>
         </ul>
         <button @click="deleteHealthRecord" class="btn-floating btn-large red"><i class="fa fa-times"></i></button>
         <div class="fixed-action-btn">
