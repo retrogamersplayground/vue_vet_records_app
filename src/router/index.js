@@ -6,11 +6,12 @@ import ViewMare from '@/components/ViewMare'
 import EditMare from '@/components/EditMare'
 import AddHealthRecord from '@/components/AddHealthRecord'
 import ViewHealthRecord from '@/components/ViewHealthRecord'
+import EditHealthRecord from '@/components/EditHealthRecord'
 import ViewHealthRecord2 from '@/components/ViewHealthRecord2'
+import EditHealthRecord2 from '@/components/EditHealthRecord2'
 import Login from '@/components/Login'
 import Register from '@/components/Register'
 import firebase from 'firebase'
-
 
 Vue.use(Router)
 
@@ -73,13 +74,29 @@ let router = new Router({
       }
     },
     {
+      path: '/edit/:health_id',
+        name: 'edit-health-record',
+        component: EditHealthRecord,
+        meta: {
+          requiresAuth: true
+        }
+    },
+    {
       path: '/:mare_id',
         name: 'view-health-record2',
         component: ViewHealthRecord2,
         meta: {
           requiresAuth: true
         }
-      },
+    },
+    {
+      path: '/edit/:health_id2',
+        name: 'edit-health-record2',
+        component: EditHealthRecord2,
+        meta: {
+          requiresAuth: true
+        }
+    },
     {
       path: '/:mare_id',
       name: 'add-health-record',
@@ -90,7 +107,6 @@ let router = new Router({
     }
   ]
 })
-
 
 // Nav Guards
 

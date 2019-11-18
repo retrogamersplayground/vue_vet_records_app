@@ -21,6 +21,12 @@
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
+                                <input type="text" v-model="health_id">
+                                <label>Health ID</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
                                 <input type="text" v-model="hr_date" required>
                                 <label>Date</label>
                             </div>
@@ -59,6 +65,12 @@
                         <div class="row">
                             <div class="input-field col s12">
                                 <input disabled type="text" v-model="name" placeholder="Mare Name" required>   
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input type="text" v-model="health_id2">
+                                <label>Health ID</label>
                             </div>
                         </div>
                         <div class="row">
@@ -136,6 +148,8 @@ export default {
     name: 'add-health-record',
     data () {
         return {
+            health_id: null,
+            health_id2: null,
             mare_id: null,
             name: null,
             hr_date: null,
@@ -180,6 +194,7 @@ export default {
         addHealthRecord () {
             db.collection('horse_health').add({
                 mare_id: this.mare_id,
+                health_id: this.health_id,
                 name: this.name,
                 hr_date: this.hr_date,
                 deworm: this.deworm,
@@ -193,6 +208,7 @@ export default {
         addHealthRecord2 () {
             db.collection('horse_health2').add({
                 mare_id: this.mare_id,
+                health_id2: this.health_id2,
                 name: this.name,
                 hr2_date: this.hr2_date,
                 l_ovary: this.l_ovary,

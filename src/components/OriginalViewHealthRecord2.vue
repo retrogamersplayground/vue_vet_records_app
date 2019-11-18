@@ -1,21 +1,25 @@
 <template>
-    <div id="view-health-record2">
+    <div id="original-view-health-record2">
         
         
         <ul class="collection with-header">
             <li class="collection-header">
                 <h3>Additional Health Records</h3>
             </li>
-            <li class="collection-item">Mare ID#: {{mare_id}}</li>
-            <li class="collection-item">Date: {{hr2_date}}</li>
-            <li class="collection-item">Left Ovary: {{l_ovary}}</li>
-            <li class="collection-item">Right Ovary: {{r_ovary}}</li>
-            <li class="collection-item">Uterine Edema: {{uterine_edema}}</li>
-            <li class="collection-item">Uterin Fluid: {{uterine_fluid}}</li>
-            <li class="collection-item">UT/CT Tone: {{ut_ct_tone}}</li>
-            <li class="collection-item">Teasing: {{teasing}}</li>
-            <li class="collection-item">Bred/Treatment: {{bred_treatments}}</li>
-            <li class="collection-item">Initials: {{initials}}</li>
+            <li v-for="horse_health2 in horse_health2" v-bind:key="horse_health2.id" class="collection-item">
+                <ul>
+                    <li class="collection-item">Mare ID#: {{mare_id}}</li>
+                    <li class="collection-item">Date: {{hr2_date}}</li>
+                    <li class="collection-item">Left Ovary: {{l_ovary}}</li>
+                    <li class="collection-item">Right Ovary: {{r_ovary}}</li>
+                    <li class="collection-item">Uterine Edema: {{uterine_edema}}</li>
+                    <li class="collection-item">Uterin Fluid: {{uterine_fluid}}</li>
+                    <li class="collection-item">UT/CT Tone: {{ut_ct_tone}}</li>
+                    <li class="collection-item">Teasing: {{teasing}}</li>
+                    <li class="collection-item">Bred/Treatment: {{bred_treatments}}</li>
+                    <li class="collection-item">Initials: {{initials}}</li>
+                </ul>
+            </li>
         </ul>
         <button @click="deleteHealthRecord2" class="btn-floating btn-large red"><i class="fa fa-times"></i></button>
         <div class="fixed-action-btn">
@@ -27,9 +31,10 @@
 <script>
 import db from './firebaseInit'
 export default {
-    name: 'view-health-record2',
+    name: 'original-view-health-record2',
     data () {
         return {
+            horse_health2: [],
             mare_id: null,
             name: null,
             l_ovary: null,
@@ -83,6 +88,7 @@ export default {
                     this.bred_treatments = doc.data().bred_treatments
                     this.initials = doc.data().initials
                 })
+                this.horse_health2.push(data)
             })
         },
         deleteHealthRecord2 () {
