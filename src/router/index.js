@@ -16,8 +16,7 @@ import firebase from 'firebase'
 Vue.use(Router)
 
 let router = new Router({
-  routes: [
-    {
+  routes: [{
       path: '/',
       name: 'dashboard',
       component: Dashboard,
@@ -66,7 +65,7 @@ let router = new Router({
       }
     },
     {
-    path: '/:mare_id',
+      path: '/:mare_id',
       name: 'view-health-record',
       component: ViewHealthRecord,
       meta: {
@@ -75,27 +74,27 @@ let router = new Router({
     },
     {
       path: '/edit/:health_id',
-        name: 'edit-health-record',
-        component: EditHealthRecord,
-        meta: {
-          requiresAuth: true
-        }
+      name: 'edit-health-record',
+      component: EditHealthRecord,
+      meta: {
+        requiresAuth: true
+      }
     },
     {
       path: '/:mare_id',
-        name: 'view-health-record2',
-        component: ViewHealthRecord2,
-        meta: {
-          requiresAuth: true
-        }
+      name: 'view-health-record2',
+      component: ViewHealthRecord2,
+      meta: {
+        requiresAuth: true
+      }
     },
     {
       path: '/edit/:health_id2',
-        name: 'edit-health-record2',
-        component: EditHealthRecord2,
-        meta: {
-          requiresAuth: true
-        }
+      name: 'edit-health-record2',
+      component: EditHealthRecord2,
+      meta: {
+        requiresAuth: true
+      }
     },
     {
       path: '/:mare_id',
@@ -111,10 +110,10 @@ let router = new Router({
 // Nav Guards
 
 router.beforeEach((to, from, next) => {
-// Check for requiredAuth guard
-  if(to.matched.some(record => record.meta.requiresAuth)) {
+  // Check for requiredAuth guard
+  if (to.matched.some(record => record.meta.requiresAuth)) {
     //Check if NOT logged in
-    if(!firebase.auth().currentUser) {
+    if (!firebase.auth().currentUser) {
       //Go to login
       next({
         path: '/login',
@@ -124,11 +123,11 @@ router.beforeEach((to, from, next) => {
       })
     } else {
       //Proceed to route
-      next()  
+      next()
     }
-  } else if(record => record.meta.requiresGuest) {
+  } else if (record => record.meta.requiresGuest) {
     //Check if logged in
-    if(firebase.auth().currentUser) {
+    if (firebase.auth().currentUser) {
       //Go to login
       next({
         path: '/',
@@ -138,7 +137,7 @@ router.beforeEach((to, from, next) => {
       })
     } else {
       //Proceed to route
-      next()  
+      next()
     }
   } else {
     //Proceed to route
