@@ -11,6 +11,7 @@ import ViewHealthRecord2 from '@/components/ViewHealthRecord2'
 import EditHealthRecord2 from '@/components/EditHealthRecord2'
 import Login from '@/components/Login'
 import Register from '@/components/Register'
+import ResetPassword from '@/components/ResetPassword'
 import firebase from 'firebase'
 
 Vue.use(Router)
@@ -36,6 +37,14 @@ let router = new Router({
       path: '/register',
       name: 'register',
       component: Register,
+      meta: {
+        requiresGuest: true
+      }
+    },
+    {
+      path: '/reset',
+      name: 'reset',
+      component: ResetPassword,
       meta: {
         requiresGuest: true
       }

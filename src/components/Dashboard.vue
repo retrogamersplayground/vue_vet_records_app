@@ -11,28 +11,24 @@
             Mare ID#: {{mare.mare_id}}
             <span>Mare Name: {{mare.name}}</span>
           </h5>
-
           <router-link
             class="secondary-content"
             v-bind:to="{name:'view-health-record2', params: {mare_id: mare.mare_id}}"
           >
             <i class="fa fa-h-square"></i>
           </router-link>
-
           <router-link
             class="secondary-content"
             v-bind:to="{name:'view-health-record', params: {mare_id: mare.mare_id}}"
           >
             <i class="fa fa-eyedropper"></i>
           </router-link>
-
           <router-link
             class="secondary-content"
             v-bind:to="{name:'add-health-record', params: {mare_id: mare.mare_id}}"
           >
             <i class="fa fa-medkit"></i>
           </router-link>
-
           <router-link
             class="secondary-content"
             v-bind:to="{name:'view-mare', params: {mare_id: mare.mare_id}}"
