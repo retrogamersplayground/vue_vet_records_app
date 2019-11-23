@@ -4,148 +4,147 @@
     <div class="row">
       <form @submit.prevent="saveMare" class="col s12">
         <div class="row">
+          <label for="mare_id">Mare ID#</label>
           <div class="input-field col s12">
-            <input type="text" v-model="mare_id" required />
-            <label>Mare ID#</label>
+            <input type="text" v-model="mare_id" id="mare_id" required />
           </div>
         </div>
         <div class="row">
+          <label for="name">Mare's Name</label>
           <div class="input-field col s12">
-            <input type="text" v-model="name" required />
-            <label>Mare's Name</label>
+            <input type="text" v-model="name" id="name" required />
           </div>
         </div>
         <div class="row">
+          <label for="color">Color</label>
           <div class="input-field col s12">
-            <input type="text" v-model="color" />
-            <label>Color</label>
+            <input type="text" v-model="color" id="color" />
           </div>
         </div>
         <div class="row">
+          <label for="age">Age</label>
           <div class="input-field col s12">
-            <input type="text" v-model="age" />
-            <label>Age</label>
+            <input type="text" v-model="age" id="age" />
           </div>
         </div>
         <div class="row">
+          <label for="description">Description</label>
           <div class="input-field col s12">
-            <input type="text" v-model="description" />
-            <label>Description</label>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="input-field col s12">
-            <input type="text" v-model="arrival" />
-            <label>Arrival</label>
+            <input type="text" v-model="description" id="description" />
           </div>
         </div>
         <div class="row">
+          <label for="arrival">Arrival</label>
           <div class="input-field col s12">
-            <input type="text" v-model="depart" />
-            <label>Depart</label>
+            <input type="text" v-model="arrival" id="arrival" />
           </div>
         </div>
         <div class="row">
+          <label for="depart">Depart</label>
           <div class="input-field col s12">
-            <input type="text" v-model="owner" />
-            <label>Owner</label>
+            <input type="text" v-model="depart" id="depart" />
           </div>
         </div>
         <div class="row">
+          <label for="owner">Owner</label>
           <div class="input-field col s12">
-            <input type="text" v-model="agent" />
-            <label>Agent</label>
+            <input type="text" v-model="owner" id="owner" />
           </div>
         </div>
         <div class="row">
+          <label for="agent">Agent</label>
           <div class="input-field col s12">
-            <input type="text" v-model="agent_phone" />
-            <label>Agent's Phone</label>
+            <input type="text" v-model="agent" id="agent" />
           </div>
         </div>
         <div class="row">
+          <label for="agent_phone">Agent's Phone</label>
           <div class="input-field col s12">
-            <input type="text" v-model="address" />
-            <label>Address</label>
+            <input type="text" v-model="agent_phone" id="agent_phone" />
           </div>
         </div>
         <div class="row">
+          <label for="address">Address</label>
           <div class="input-field col s12">
-            <input type="text" v-model="home_phone" />
-            <label>Home Phone</label>
+            <input type="text" v-model="address" id="address" />
           </div>
         </div>
         <div class="row">
+          <label for="home_phone">Home Phone</label>
           <div class="input-field col s12">
-            <input type="text" v-model="work_phone" />
-            <label>Work Phone</label>
+            <input type="text" v-model="home_phone" id="home_phone" />
           </div>
         </div>
         <div class="row">
+          <label for="work_phone">Work Phone</label>
           <div class="input-field col s12">
-            <input type="text" v-model="fax" />
-            <label>Fax</label>
+            <input type="text" v-model="work_phone" id="work_phone" />
           </div>
         </div>
         <div class="row">
+          <label for="fax">Fax</label>
           <div class="input-field col s12">
-            <input type="text" v-model="cell" />
-            <label>Cell</label>
+            <input type="text" v-model="fax" id="fax" />
           </div>
         </div>
         <div class="row">
+          <label for="cell">Cell</label>
           <div class="input-field col s12">
-            <input type="email" v-model="email" />
-            <label>Email</label>
+            <input type="text" v-model="cell" id="cell" />
           </div>
         </div>
         <div class="row">
+          <label for="email">Email</label>
           <div class="input-field col s12">
-            <input type="text" v-model="insured" />
-            <label>Insured</label>
+            <input type="email" v-model="email" id="email" />
           </div>
         </div>
         <div class="row">
+          <label for="insured">Insured</label>
           <div class="input-field col s12">
-            <input type="text" v-model="tentative_foal_date" />
-            <label>Tentative Foaling Date</label>
+            <input type="text" v-model="insured" id="insured" />
           </div>
         </div>
         <div class="row">
+          <label for="tentative_foal_date">Tentative Foaling Date</label>
           <div class="input-field col s12">
-            <input type="text" v-model="in_foal_to" />
-            <label>In Foal To</label>
+            <input type="text" v-model="tentative_foal_date" id="tentative_foal_date" />
           </div>
         </div>
         <div class="row">
+          <label for="in_foal_to">In Foal To</label>
           <div class="input-field col s12">
-            <input type="text" v-model="stallion" />
-            <label>Stallion</label>
+            <input type="text" v-model="in_foal_to" id="in_foal_to" />
           </div>
         </div>
         <div class="row">
+          <label for="stallion">Stallion</label>
           <div class="input-field col s12">
-            <input type="text" v-model="stallion_contact" />
-            <label>Stallion Contact Name</label>
+            <input type="text" v-model="stallion" id="stallion" />
           </div>
         </div>
         <div class="row">
+          <label for="stallion_contact">Stallion Contact Name</label>
           <div class="input-field col s12">
-            <input type="text" v-model="stallion_phone" />
-            <label>Stallion Phone Number</label>
+            <input type="text" v-model="stallion_contact" id="stallion_contact" />
           </div>
         </div>
         <div class="row">
+          <label for="stallion_phone">Stallion Phone Number</label>
           <div class="input-field col s12">
-            <input type="text" v-model="comments" />
-            <label>Comments(Previous Repro Problems,Previous Health Problems)</label>
+            <input type="text" v-model="stallion_phone" id="stallion_phone" />
           </div>
         </div>
         <div class="row">
+          <label for="comments">Comments(Previous Repro Problems,Previous Health Problems)</label>
           <div class="input-field col s12">
-            <input type="text" v-model="uterine_cysts" />
-            <label>Uterine Cysts</label>
+            <input type="text" v-model="comments" id="comments" />
+          </div>
+        </div>
+        <div class="row">
+          <label for="uterine_cysts">Uterine Cysts</label>
+          <div class="input-field col s12">
+            <input type="text" v-model="uterine_cysts" id="uterine_cysts"/>
           </div>
         </div>
         <button type="submit" class="btn-floating btn-large green">

@@ -1,52 +1,52 @@
 <template>
   <div id="add-health-record">
-    <h2>Add Health Record</h2>
     <ul class="collection with-header">
       <li class="collection-header">
-        <h4>{{name}}</h4>
-        <h6>Mare ID#: {{mare_id}}</h6>
+        <h2>Add Health Record</h2>
       </li>
       <li>
         <div class="row">
           <form @submit.prevent="addHealthRecord" class="col s12">
             <div class="row">
+              <label for="mare_id">Mare ID#</label>
               <div class="input-field col s12">
-                <input disabled type="hidden" v-model="mare_id" required />
+                <input disabled type="text" v-model="mare_id" id="mare_id" required />
               </div>
             </div>
             <div class="row">
+              <label for="name">Mare Name</label>
               <div class="input-field col s12">
-                <input disabled type="hidden" v-model="name" placeholder="Mare Name" required />
+                <input disabled type="text" v-model="name" id="name" required />
               </div>
             </div>
             <div class="row">
+              <label for="health_id">Health ID</label>
               <div class="input-field col s12">
-                <input type="text" v-model="health_id" />
-                <label>Health ID</label>
+                <input type="text" v-model="health_id" id="health_id" required />
               </div>
             </div>
             <div class="row">
+              <label for="hr_date">Date</label>
               <div class="input-field col s12">
-                <input type="text" v-model="hr_date" required />
-                <label>Date</label>
+                <input type="text" v-model="hr_date" id="hr_date" required />
               </div>
             </div>
             <div class="row">
+              <label for="deworm">Deworm</label>
               <div class="input-field col s12">
-                <input type="text" v-model="deworm" />
-                <label>Deworm</label>
+                <input type="text" v-model="deworm" id="deworm" />
               </div>
             </div>
             <div class="row">
+              <label for="vaccination">Vaccination</label>
               <div class="input-field col s12">
-                <input type="text" v-model="vaccination" />
-                <label>Vaccination</label>
+                <input type="text" v-model="vaccination" id="vaccination" />
               </div>
             </div>
             <div class="row">
+              <label for="hr_comments">Comments</label>
               <div class="input-field col s12">
-                <input type="text" v-model="hr_comments" />
-                <label>Comments</label>
+                <input type="text" v-model="hr_comments" id="hr_comments" />
               </div>
             </div>
             <button type="submit" class="btn-floating btn-large green">
@@ -59,73 +59,75 @@
         <div class="row">
           <form @submit.prevent="addHealthRecord2" class="col s12">
             <div class="row">
+              <label for="mare_id">Mare ID#</label>
               <div class="input-field col s12">
-                <input disabled type="text" v-model="mare_id" required />
+                <input disabled type="text" v-model="mare_id" id="mare_id" required />
               </div>
             </div>
             <div class="row">
+              <label for="name">Mare Name</label>
               <div class="input-field col s12">
-                <input disabled type="text" v-model="name" placeholder="Mare Name" required />
+                <input disabled type="text" v-model="name" id="name" required />
               </div>
             </div>
             <div class="row">
+              <label for="health_id2">Health ID</label>
               <div class="input-field col s12">
-                <input type="text" v-model="health_id2" />
-                <label>Health ID</label>
+                <input type="text" v-model="health_id2" id="health_id2" />
               </div>
             </div>
             <div class="row">
+              <label for="hr2_date">Date</label>
               <div class="input-field col s12">
-                <input type="text" v-model="hr2_date" />
-                <label>Date</label>
+                <input type="text" v-model="hr2_date" id="hr2_date" />
               </div>
             </div>
             <div class="row">
+              <label for="l_ovary">Left Ovary</label>
               <div class="input-field col s12">
-                <input type="text" v-model="l_ovary" />
-                <label>Left Ovary</label>
+                <input type="text" v-model="l_ovary" id="l_ovary" />
               </div>
             </div>
             <div class="row">
+              <label for="r_ovary">Right Ovary</label>
               <div class="input-field col s12">
-                <input type="text" v-model="r_ovary" />
-                <label>Right Ovary</label>
+                <input type="text" v-model="r_ovary" id="r_ovary" />
               </div>
             </div>
             <div class="row">
+              <label for="uterine_edema">Uterine Edema</label>
               <div class="input-field col s12">
-                <input type="text" v-model="uterine_edema" />
-                <label>Uterine Edema</label>
+                <input type="text" v-model="uterine_edema" id="uterine_edema"/>
               </div>
             </div>
             <div class="row">
+              <label for="uterine_fluid">Uterine Fluid</label>
               <div class="input-field col s12">
-                <input type="text" v-model="uterine_fluid" />
-                <label>Uterine Fluid</label>
+                <input type="text" v-model="uterine_fluid" id="uterine_fluid" />
               </div>
             </div>
             <div class="row">
+              <label for="ut_ct_tone">UT/CT Tone</label>
               <div class="input-field col s12">
-                <input type="text" v-model="ut_ct_tone" />
-                <label>UT/CT Tone</label>
+                <input type="text" v-model="ut_ct_tone" id="ut_ct_tone" />
               </div>
             </div>
             <div class="row">
+              <label for="teasing">Teasing</label>
               <div class="input-field col s12">
-                <input type="text" v-model="teasing" />
-                <label>Teasing</label>
+                <input type="text" v-model="teasing" id="teasing" />
               </div>
             </div>
             <div class="row">
+              <label for="bred_treatments">Bred/Treatments</label>
               <div class="input-field col s12">
-                <input type="text" v-model="bred_treatments" />
-                <label>Bred/Treatments</label>
+                <input type="text" v-model="bred_treatments" id="bred_treatments" />
               </div>
             </div>
             <div class="row">
+              <label for="initilas">Initials</label>
               <div class="input-field col s12">
-                <input type="text" v-model="initials" />
-                <label>Initials</label>
+                <input type="text" v-model="initials" id="initials" />
               </div>
             </div>
             <button type="submit" class="btn-floating btn-large green">

@@ -4,40 +4,45 @@
     <div class="row">
       <form @submit.prevent="updateHealthRecord" class="col s12">
         <div class="row">
+          <label for="mare_id">Mare ID#</label>
           <div class="input-field col s12">
-            mare_id:
-            <input disabled type="text" v-model="mare_id" required />
+            <input disabled type="text" v-model="mare_id" id="mare_id" required />
           </div>
         </div>
         <div class="row">
+          <label for="name">Mare Name</label>
           <div class="input-field col s12">
-            <input type="text" v-model="name" placeholder="Mare Name" required />
+            <input type="text" v-model="name" id="name" required />
           </div>
         </div>
         <div class="row">
+          <label for="health_id">Health Record ID#</label>
           <div class="input-field col s12">
-            Health_id:
-            <input type="text" v-model="health_id" placeholder="Health Record ID" />
+            <input type="text" v-model="health_id" id="health_id" />
           </div>
         </div>
         <div class="row">
+          <label for="hr_date">Date</label>
           <div class="input-field col s12">
-            <input type="text" v-model="hr_date" placeholder="Date" />
+            <input type="text" v-model="hr_date" id="hr_date" />
           </div>
         </div>
         <div class="row">
+          <label for="deworm">Deworm</label>
           <div class="input-field col s12">
-            <input type="text" v-model="deworm" placeholder="Deworm" />
+            <input type="text" v-model="deworm" id="deworm" />
           </div>
         </div>
         <div class="row">
+          <label for="vaccination">Vaccination</label>
           <div class="input-field col s12">
-            <input type="text" v-model="vaccination" placeholder="Vaccination" />
+            <input type="text" v-model="vaccination" id="vaccination" />
           </div>
         </div>
         <div class="row">
+          <label for="hr_comments">Comments</label>
           <div class="input-field col s12">
-            <input type="text" v-model="hr_comments" placeholder="Comments" />
+            <input type="text" v-model="hr_comments" id="hr_comments" />
           </div>
         </div>
         <button type="submit" class="btn-floating btn-large green">

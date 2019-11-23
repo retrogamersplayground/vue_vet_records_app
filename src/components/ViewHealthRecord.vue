@@ -5,15 +5,16 @@
         <h3>Health Records</h3>
       </li>
       <li v-for="horse_health in horse_health" v-bind:key="horse_health.id" class="collection-item">
-        <h5>Mare ID#: {{horse_health.mare_id}}</h5>
-        <h5>Mare Name: {{horse_health.name}}</h5>
-        <ul>
-          <li>Mare ID#: {{horse_health.mare_id}}</li>
-          <li>Health Record ID#: {{horse_health.health_id}}</li>
-          <li>Date: {{horse_health.hr_date}}</li>
-          <li>Deworm: {{horse_health.deworm}}</li>
-          <li>Vaccination: {{horse_health.vaccination}}</li>
-          <li>Comments: {{horse_health.hr_comments}}</li>
+        <!--<h5>Mare ID#: {{horse_health.mare_id}}</h5>
+        <h5>Mare Name: {{horse_health.name}}</h5>-->
+        <ul class="collection">
+          <li class="collection-item">Mare Name: {{horse_health.name}}</li>
+          <li class="collection-item">Mare ID#: {{horse_health.mare_id}}</li>
+          <li class="collection-item">Health Record ID#: {{horse_health.health_id}}</li>
+          <li class="collection-item">Date: {{horse_health.hr_date}}</li>
+          <li class="collection-item">Deworm: {{horse_health.deworm}}</li>
+          <li class="collection-item">Vaccination: {{horse_health.vaccination}}</li>
+          <li class="collection-item">Comments: {{horse_health.hr_comments}}</li>
         </ul>
         <router-link
           v-bind:to="{name: 'edit-health-record', params: {health_id: horse_health.health_id}}"

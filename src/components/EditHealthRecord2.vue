@@ -4,60 +4,69 @@
     <div class="row">
       <form @submit.prevent="updateHealthRecord2" class="col s12">
         <div class="row">
+          <label for="mare_id">Mare ID#</label>
           <div class="input-field col s12">
-            mare_id:
-            <input disabled type="text" v-model="mare_id" required />
+            <input disabled type="text" v-model="mare_id" id="mare_id" required />
           </div>
         </div>
         <div class="row">
+          <label for="name">Mare Name</label>
           <div class="input-field col s12">
-            <input type="text" v-model="name" placeholder="Mare Name" required />
+            <input type="text" v-model="name" id="name" required />
           </div>
         </div>
         <div class="row">
+          <label for="health_id2">Health Record ID#</label>
           <div class="input-field col s12">
-            Health_id:
-            <input type="text" v-model="health_id2" placeholder="Health Record ID" />
+            <input type="text" v-model="health_id2" id="health_id2" />
           </div>
         </div>
         <div class="row">
+          <label for="l_ovary">Left Ovary</label>
           <div class="input-field col s12">
-            <input type="text" v-model="l_ovary" placeholder="Left Ovary" />
+            <input type="text" v-model="l_ovary" id="l_ovary" />
           </div>
         </div>
         <div class="row">
+          <label for="r_ovary">Right Ovary</label>
           <div class="input-field col s12">
-            <input type="text" v-model="r_ovary" placeholder="Right Ovary" />
+            <input type="text" v-model="r_ovary" id="r_ovary" />
           </div>
         </div>
         <div class="row">
+          <label for="uterine_edema">Uterine Edema</label>
           <div class="input-field col s12">
-            <input type="text" v-model="uterine_edema" placeholder="Uterine Edema" />
+            <input type="text" v-model="uterine_edema" id="uterine_edema" />
           </div>
         </div>
         <div class="row">
+          <label for="uterine_fluid">Uterine Fluid</label>
           <div class="input-field col s12">
-            <input type="text" v-model="uterine_fluid" placeholder="Uterine Fluid" />
+            <input type="text" v-model="uterine_fluid" id="uterine_fluid" />
           </div>
         </div>
         <div class="row">
+          <label for="ut_ct_tone">UT/CT Tone</label>
           <div class="input-field col s12">
-            <input type="text" v-model="ut_ct_tone" placeholder="UT/CT Tone" />
+            <input type="text" v-model="ut_ct_tone" id="ut_ct_tone" />
           </div>
         </div>
         <div class="row">
+          <label for="teasing">Teasing</label>
           <div class="input-field col s12">
-            <input type="text" v-model="teasing" placeholder="Teasing" />
+            <input type="text" v-model="teasing" id="teasing" />
           </div>
         </div>
         <div class="row">
+          <label for="bred_treatments">Bred/Treatments</label>
           <div class="input-field col s12">
-            <input type="text" v-model="bred_treatments" placeholder="Bred/Treatments" />
+            <input type="text" v-model="bred_treatments" id="bred_treatments" />
           </div>
         </div>
         <div class="row">
+          <label for="initials">Initials</label>
           <div class="input-field col s12">
-            <input type="text" v-model="initials" placeholder="Initials" />
+            <input type="text" v-model="initials" id="initials" />
           </div>
         </div>
         <button type="submit" class="btn-floating btn-large green">
