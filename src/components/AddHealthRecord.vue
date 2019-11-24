@@ -22,7 +22,7 @@
             <div class="row">
               <label for="health_id">Health ID</label>
               <div class="input-field col s12">
-                <input type="text" v-model="health_id" id="health_id" required />
+                <input disabled type="text" v-model="health_id" id="health_id" required />
               </div>
             </div>
             <div class="row">
@@ -73,7 +73,7 @@
             <div class="row">
               <label for="health_id2">Health ID</label>
               <div class="input-field col s12">
-                <input type="text" v-model="health_id2" id="health_id2" />
+                <input disabled type="text" v-model="health_id2" id="health_id2" />
               </div>
             </div>
             <div class="row">
@@ -151,8 +151,8 @@ export default {
   name: "add-health-record",
   data() {
     return {
-      health_id: null,
-      health_id2: null,
+      health_id: "health_id _" + Math.round((new Date().getTime() / 1000)),
+      health_id2: "health_id2 _" + Math.round((new Date().getTime() / 1000)),
       mare_id: null,
       name: null,
       hr_date: null,

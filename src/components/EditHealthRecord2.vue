@@ -12,13 +12,13 @@
         <div class="row">
           <label for="name">Mare Name</label>
           <div class="input-field col s12">
-            <input type="text" v-model="name" id="name" required />
+            <input disabled type="text" v-model="name" id="name" required />
           </div>
         </div>
         <div class="row">
           <label for="health_id2">Health Record ID#</label>
           <div class="input-field col s12">
-            <input type="text" v-model="health_id2" id="health_id2" />
+            <input disabled type="text" v-model="health_id2" id="health_id2" />
           </div>
         </div>
         <div class="row">
