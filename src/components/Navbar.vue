@@ -74,6 +74,7 @@ export default {
 $(document).ready(function() {
   $(".sidenav").sidenav();
 });
+
 </script>
 
 <style scoped>
