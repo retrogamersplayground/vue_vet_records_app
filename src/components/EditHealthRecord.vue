@@ -24,7 +24,7 @@
         <div class="row">
           <label for="hr_date">Date</label>
           <div class="input-field col s12">
-            <input type="text" v-model="hr_date" id="hr_date" />
+            <input type="date" v-model="hr_date" id="hr_date" />
           </div>
         </div>
         <div class="row">

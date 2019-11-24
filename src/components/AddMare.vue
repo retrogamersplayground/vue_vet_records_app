@@ -10,7 +10,7 @@
           </div>
         </div>
         <div class="row">
-          <label for="name">Mare's Name</label>
+          <label for="name">Mare Name</label>
           <div class="input-field col s12">
             <input type="text" v-model="name" id="name" required />
           </div>
@@ -24,7 +24,7 @@
         <div class="row">
           <label for="age">Age</label>
           <div class="input-field col s12">
-            <input type="text" v-model="age" id="age" />
+            <input type="number" v-model="age" id="age" />
           </div>
         </div>
         <div class="row">
@@ -36,13 +36,13 @@
         <div class="row">
           <label for="arrival">Arrival</label>
           <div class="input-field col s12">
-            <input type="text" v-model="arrival" id="arrival" />
+            <input type="date" v-model="arrival" id="arrival" />
           </div>
         </div>
         <div class="row">
           <label for="depart">Depart</label>
           <div class="input-field col s12">
-            <input type="text" v-model="depart" id="depart" />
+            <input type="date" v-model="depart" id="depart" />
           </div>
         </div>
         <div class="row">
@@ -58,9 +58,9 @@
           </div>
         </div>
         <div class="row">
-          <label for="agent_phone">Agent's Phone</label>
+          <label for="agent_phone">Agent's Phone Number</label>
           <div class="input-field col s12">
-            <input type="text" v-model="agent_phone" id="agent_phone" />
+            <input type="tel" v-model="agent_phone" id="agent_phone" />
           </div>
         </div>
         <div class="row">
@@ -72,25 +72,25 @@
         <div class="row">
           <label for="home_phone">Home Phone</label>
           <div class="input-field col s12">
-            <input type="text" v-model="home_phone" id="home_phone" />
+            <input type="tel" v-model="home_phone" id="home_phone" />
           </div>
         </div>
         <div class="row">
           <label for="work_phone">Work Phone</label>
           <div class="input-field col s12">
-            <input type="text" v-model="work_phone" id="work_phone" />
+            <input type="tel" v-model="work_phone" id="work_phone" />
           </div>
         </div>
         <div class="row">
           <label for="fax">Fax</label>
           <div class="input-field col s12">
-            <input type="text" v-model="fax" id="fax" />
+            <input type="tel" v-model="fax" id="fax" />
           </div>
         </div>
         <div class="row">
           <label for="cell">Cell</label>
           <div class="input-field col s12">
-            <input type="text" v-model="cell" id="cell" />
+            <input type="tel" v-model="cell" id="cell" />
           </div>
         </div>
         <div class="row">
@@ -108,7 +108,7 @@
         <div class="row">
           <label for="tentative_foal_date">Tentative Foaling Date</label>
           <div class="input-field col s12">
-            <input type="text" v-model="tentative_foal_date" id="tentative_foal_date" />
+            <input type="date" v-model="tentative_foal_date" id="tentative_foal_date" />
           </div>
         </div>
         <div class="row">
@@ -132,7 +132,7 @@
         <div class="row">
           <label for="stallion_phone">Stallion Phone Number</label>
           <div class="input-field col s12">
-            <input type="text" v-model="stallion_phone" id="stallion_phone" />
+            <input type="tel" v-model="stallion_phone" id="stallion_phone" />
           </div>
         </div>
         <div class="row">

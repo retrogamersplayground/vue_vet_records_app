@@ -22,6 +22,12 @@
           </div>
         </div>
         <div class="row">
+          <label for="hr2_date">Date</label>
+          <div class="input-field col s12">
+            <input type="date" v-model="hr2_date" id="hr2_date" />
+          </div>
+        </div>
+        <div class="row">
           <label for="l_ovary">Left Ovary</label>
           <div class="input-field col s12">
             <input type="text" v-model="l_ovary" id="l_ovary" />

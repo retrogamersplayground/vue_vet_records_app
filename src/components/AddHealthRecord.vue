@@ -28,7 +28,7 @@
             <div class="row">
               <label for="hr_date">Date</label>
               <div class="input-field col s12">
-                <input type="text" v-model="hr_date" id="hr_date" required />
+                <input type="date" v-model="hr_date" id="hr_date" required />
               </div>
             </div>
             <div class="row">
@@ -79,7 +79,7 @@
             <div class="row">
               <label for="hr2_date">Date</label>
               <div class="input-field col s12">
-                <input type="text" v-model="hr2_date" id="hr2_date" />
+                <input type="date" v-model="hr2_date" id="hr2_date" />
               </div>
             </div>
             <div class="row">

@@ -1,28 +1,47 @@
 <template>
-  <nav>
-    <div class="nav-wrapper green">
-      <div class="container">
-        <router-link to="/" class="brand-logo">Mare Records</router-link>
-        <ul class="right">
-          <li v-if="isLoggedIn">
-            <span class="email black-text">{{currentUser}}</span>
-          </li>
-          <li v-if="isLoggedIn">
-            <router-link to="/">Dashboard</router-link>
-          </li>
-          <li v-if="!isLoggedIn">
-            <router-link to="/login">Login</router-link>
-          </li>
-          <li v-if="!isLoggedIn">
-            <router-link to="/register">Register</router-link>
-          </li>
-          <li v-if="isLoggedIn">
-            <button class="btn black" v-on:click="logout">Logout</button>
-          </li>
-        </ul>
+  <div>
+    <nav>
+      <div class="nav-wrapper green">
+        <div class="container">
+          <router-link to="/" class="brand-logo" id="brand-logo">Mare Records</router-link>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger right">
+            <i class="material-icons">menu</i>
+          </a>
+          <ul class="right hide-on-med-and-down">
+            <li v-if="isLoggedIn" id="userLi">
+              <span class="email black-text">{{currentUser}}</span>
+            </li>
+            <li v-if="isLoggedIn" class="navLi">
+              <router-link to="/">Dashboard</router-link>
+            </li>
+            <li v-if="!isLoggedIn" class="navLi">
+              <router-link to="/login">Login</router-link>
+            </li>
+            <li v-if="!isLoggedIn" class="navLi">
+              <router-link to="/register">Register</router-link>
+            </li>
+            <li v-if="isLoggedIn" class="navLi">
+              <button class="btn black" v-on:click="logout">Logout</button>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+    <ul class="sidenav" id="mobile-demo">
+      <li v-if="isLoggedIn" class="navLi centerMobileLiText">
+        <router-link to="/">Dashboard</router-link>
+      </li>
+      <li v-if="!isLoggedIn" class="navLi centerMobileLiText">
+        <router-link to="/login">Login</router-link>
+      </li>
+      <li v-if="!isLoggedIn" class="navLi centerMobileLiText">
+        <router-link to="/register">Register</router-link>
+      </li>
+      <li v-if="isLoggedIn" class="navLi">
+        <button class="btn black mobileLiButton" v-on:click="logout">Logout</button>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
@@ -52,10 +71,24 @@ export default {
     }
   }
 };
+$(document).ready(function() {
+  $(".sidenav").sidenav();
+});
 </script>
 
 <style scoped>
 .email {
   padding-right: 10px;
+}
+.mobileLiButton {
+  width: 100%
+}
+.centerMobileLiText {
+  text-align: center;
+}
+@media only screen and (max-width: 357px) {
+  .brand-logo {
+    position: relative;
+  }
 }
 </style>

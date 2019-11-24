@@ -7,10 +7,7 @@
       </li>
       <li v-for="mare in mares" v-bind:key="mare.id" class="collection-item">
         <div>
-          <h5>
-            Mare ID#: {{mare.mare_id}}
-            <span>Mare Name: {{mare.name}}</span>
-          </h5>
+          <h5>{{mare.name}}</h5>
           <router-link
             class="secondary-content"
             v-bind:to="{name:'view-health-record2', params: {mare_id: mare.mare_id}}"
