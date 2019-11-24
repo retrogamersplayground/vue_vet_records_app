@@ -18,7 +18,7 @@
         <div class="row">
           <label for="health_id2">Health Record ID#</label>
           <div class="input-field col s12">
-            <input disabled type="text" v-model="health_id2" id="health_id2" />
+            <input disabled _type="text" v-model="health_id2" id="health_id2" />
           </div>
         </div>
         <div class="row">
