@@ -5,7 +5,8 @@
         <div class="container">
           <router-link to="/" class="brand-logo" id="brand-logo">Mare Records</router-link>
           <a href="#" data-target="mobile-demo" class="sidenav-trigger right">
-            <i class="material-icons">menu</i>
+            <i class="material-icons" @click="dropDown" id="menu">menu</i>
+            <i class="material-icons" id="clear" @click="hide">clear</i>
           </a>
           <ul class="right hide-on-med-and-down">
             <li v-if="isLoggedIn" id="userLi">
@@ -27,7 +28,7 @@
         </div>
       </div>
     </nav>
-    <ul class="sidenav" id="mobile-demo">
+    <ul class="dropDown" id="dropDown">
       <li v-if="isLoggedIn" class="navLi centerMobileLiText">
         <router-link to="/">Dashboard</router-link>
       </li>
@@ -68,13 +69,25 @@ export default {
         .then(() => {
           this.$router.go({ path: this.$router.path });
         });
+    },
+    dropDown() {
+      let elem = document.getElementById('dropDown');
+      let menu = document.getElementById('menu');
+      let clear = document.getElementById('clear');
+      elem.style.display = 'block';
+      menu.style.display = 'none';
+      clear.style.display = 'inline-block'
+    },
+    hide() {
+      let elem = document.getElementById('dropDown');
+      let menu = document.getElementById('menu');
+      let clear = document.getElementById('clear');
+      elem.style.display = 'none';
+      menu.style.display = 'inline-block';
+      clear.style.display = 'none'
     }
   }
 };
-$(document).ready(function() {
-  $(".sidenav").sidenav();
-});
-
 </script>
 
 <style scoped>
@@ -86,6 +99,16 @@ $(document).ready(function() {
 }
 .centerMobileLiText {
   text-align: center;
+}
+.dropDown {
+  display: none;
+}
+#clear {
+  display: none;
+}
+
+@media only screen and (max-width: 992px) {
+  
 }
 @media only screen and (max-width: 357px) {
   .brand-logo {
