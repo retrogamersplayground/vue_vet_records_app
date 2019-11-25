@@ -6,7 +6,7 @@
         <div class="row">
           <label for="mare_id">Mare ID#</label>
           <div class="input-field col s12">
-            <input  disabled type="text" v-model="mare_id" id="mare_id" required />
+            <input disabled type="text" v-model="mare_id" id="mare_id" required />
           </div>
         </div>
         <div class="row">
@@ -144,7 +144,7 @@
         <div class="row">
           <label for="uterine_cysts">Uterine Cysts</label>
           <div class="input-field col s12">
-            <input type="text" v-model="uterine_cysts" id="uterine_cysts"/>
+            <input type="text" v-model="uterine_cysts" id="uterine_cysts" />
           </div>
         </div>
         <button type="submit" class="btn-floating btn-large green">
@@ -166,7 +166,7 @@ export default {
   name: "add-mare",
   data() {
     return {
-      mare_id: "mare_id _" + Math.round((new Date().getTime() / 1000)),
+      mare_id: "mare_id _" + Math.round(new Date().getTime() / 1000),
       name: null,
       color: null,
       age: null,

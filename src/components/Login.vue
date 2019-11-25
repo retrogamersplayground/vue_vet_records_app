@@ -18,9 +18,7 @@
               </div>
               <button v-on:click="login" class="btn btn-large grey lighten-4 black-text">Login</button>
             </form>
-            <router-link to="/reset" tag="h6">
-              Forgot Your Password?
-            </router-link>
+            <router-link to="/reset" tag="h6">Forgot Your Password?</router-link>
           </div>
         </div>
       </div>
@@ -59,8 +57,7 @@ export default {
 </script>
 
 <style scoped>
-  router-link {
-    color: #ffffff;
-  }
-  
+router-link {
+  color: #ffffff;
+}
 </style>

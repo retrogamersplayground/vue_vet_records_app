@@ -58,8 +58,6 @@ export default {
             hr_comments: doc.data().hr_comments
           };
           this.horse_health.push(data);
-          console.log(doc.data());
-          console.log(doc.id);
         });
       });
   },

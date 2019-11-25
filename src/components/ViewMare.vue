@@ -2,7 +2,10 @@
   <div id="view-mare">
     <ul class="collection with-header">
       <li class="collection-header">
-        <h3>Mare Name:<h5>{{name}}</h5></h3>
+        <h3>
+          Mare Name:
+          <h5>{{name}}</h5>
+        </h3>
       </li>
       <li class="collection-item">Mare ID#: {{mare_id}}</li>
       <li class="collection-item">Color: {{color}}</li>
@@ -190,10 +193,10 @@ export default {
 </script>
 
 <style scoped>
-  h3 {
-    display: inline-block;
-  }
-  h5 {
+h3 {
+  display: inline-block;
+}
+h5 {
   display: inline-block;
   padding-left: 20px;
 }

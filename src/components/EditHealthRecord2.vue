@@ -190,15 +190,17 @@ export default {
         });
     },
     deleteHealthRecord2() {
-      db.collection("horse_health2")
-        .where("health_id2", "==", this.$route.params.health_id2)
-        .get()
-        .then(querySnapshot => {
-          querySnapshot.forEach(doc => {
-            doc.ref.delete();
-            this.$router.push("/");
+      if (confirm("Are you sure?")) {
+        db.collection("horse_health2")
+          .where("health_id2", "==", this.$route.params.health_id2)
+          .get()
+          .then(querySnapshot => {
+            querySnapshot.forEach(doc => {
+              doc.ref.delete();
+              this.$router.push("/");
+            });
           });
-        });
+      }
     }
   }
 };

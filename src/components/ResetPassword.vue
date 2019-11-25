@@ -36,7 +36,7 @@ export default {
         .sendPasswordResetEmail(this.email)
         .then(function() {
           // Email sent.
-          alert("Reset Password Email Sent")
+          alert("Reset Password Email Sent");
         })
         .catch(function(error) {
           // An error happened.

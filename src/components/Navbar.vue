@@ -71,20 +71,20 @@ export default {
         });
     },
     dropDown() {
-      let elem = document.getElementById('dropDown');
-      let menu = document.getElementById('menu');
-      let clear = document.getElementById('clear');
-      elem.style.display = 'block';
-      menu.style.display = 'none';
-      clear.style.display = 'inline-block'
+      let elem = document.getElementById("dropDown");
+      let menu = document.getElementById("menu");
+      let clear = document.getElementById("clear");
+      elem.style.display = "block";
+      menu.style.display = "none";
+      clear.style.display = "inline-block";
     },
     hide() {
-      let elem = document.getElementById('dropDown');
-      let menu = document.getElementById('menu');
-      let clear = document.getElementById('clear');
-      elem.style.display = 'none';
-      menu.style.display = 'inline-block';
-      clear.style.display = 'none'
+      let elem = document.getElementById("dropDown");
+      let menu = document.getElementById("menu");
+      let clear = document.getElementById("clear");
+      elem.style.display = "none";
+      menu.style.display = "inline-block";
+      clear.style.display = "none";
     }
   }
 };
@@ -101,7 +101,7 @@ export default {
 .mobileLiButton:hover {
   background-color: lightgray !important;
   color: black;
-  border: none
+  border: none;
 }
 .centerMobileLiText {
   text-align: center;
@@ -113,7 +113,7 @@ export default {
 #clear {
   display: none;
 }
-.dashboard { 
+.dashboard {
   color: black;
   font-size: 20px;
 }
@@ -134,7 +134,7 @@ export default {
 .registerLi:hover {
   background-color: lightgray;
 }
-.registerLi:hover .register{
+.registerLi:hover .register {
   color: black;
 }
 .loginLi:hover {
