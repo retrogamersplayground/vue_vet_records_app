@@ -13,13 +13,13 @@
               <span class="email black-text">{{currentUser}}</span>
             </li>
             <li v-if="isLoggedIn" class="navLi">
-              <router-link to="/">Dashboard</router-link>
+              <router-link to="/">DASHBOARD</router-link>
             </li>
             <li v-if="!isLoggedIn" class="navLi">
-              <router-link to="/login">Login</router-link>
+              <router-link to="/login">LOGIN</router-link>
             </li>
             <li v-if="!isLoggedIn" class="navLi">
-              <router-link to="/register">Register</router-link>
+              <router-link to="/register">REGISTER</router-link>
             </li>
             <li v-if="isLoggedIn" class="navLi">
               <button class="btn black" v-on:click="logout">Logout</button>
@@ -29,14 +29,14 @@
       </div>
     </nav>
     <ul class="dropDown" id="dropDown">
-      <li v-if="isLoggedIn" class="navLi centerMobileLiText">
-        <router-link to="/">Dashboard</router-link>
+      <li v-if="isLoggedIn" class="navLi centerMobileLiText dashboardLi">
+        <router-link to="/" class="dashboard">DASHBOARD</router-link>
       </li>
-      <li v-if="!isLoggedIn" class="navLi centerMobileLiText">
-        <router-link to="/login">Login</router-link>
+      <li v-if="!isLoggedIn" class="navLi centerMobileLiText loginLi">
+        <router-link to="/login" class="login">LOGIN</router-link>
       </li>
-      <li v-if="!isLoggedIn" class="navLi centerMobileLiText">
-        <router-link to="/register">Register</router-link>
+      <li v-if="!isLoggedIn" class="navLi centerMobileLiText registerLi">
+        <router-link to="/register" class="register">REGISTER</router-link>
       </li>
       <li v-if="isLoggedIn" class="navLi">
         <button class="btn black mobileLiButton" v-on:click="logout">Logout</button>
@@ -95,20 +95,56 @@ export default {
   padding-right: 10px;
 }
 .mobileLiButton {
-  width: 100%
+  width: 100%;
+  font-size: 20px;
+}
+.mobileLiButton:hover {
+  background-color: lightgray !important;
+  color: black;
+  border: none
 }
 .centerMobileLiText {
   text-align: center;
 }
 .dropDown {
   display: none;
+  margin-block-start: 0;
 }
 #clear {
   display: none;
 }
+.dashboard { 
+  color: black;
+  font-size: 20px;
+}
+.login {
+  color: black;
+  font-size: 20px;
+}
+.register {
+  color: white;
+  font-size: 20px;
+}
+.registerLi {
+  background-color: black;
+}
+.dashboardLi:hover {
+  background-color: lightgray;
+}
+.registerLi:hover {
+  background-color: lightgray;
+}
+.registerLi:hover .register{
+  color: black;
+}
+.loginLi:hover {
+  background-color: lightgray;
+}
 
 @media only screen and (max-width: 992px) {
-  
+  .container {
+    margin-bottom: none;
+  }
 }
 @media only screen and (max-width: 357px) {
   .brand-logo {
