@@ -4,8 +4,9 @@
     <ul class="collection with-header">
       <li class="collection-header">
         <h4>Mares</h4>
+        <input type="text" v-model="search" placeholder="Search Mares">
       </li>
-      <li v-for="mare in mares" v-bind:key="mare.id" class="collection-item">
+      <li v-for="mare in filteredMares" v-bind:key="mare.id" class="collection-item">
         <div>
           <h5>{{mare.name}}</h5>
           <router-link
@@ -51,7 +52,8 @@ export default {
     return {
       mares: [],
       horse_health: [],
-      horse_health2: []
+      horse_health2: [],
+      search: ''
     };
   },
   created() {
@@ -97,6 +99,13 @@ export default {
             this.horse_health2.push(data);
           });
         });
+  },
+  computed: {
+    filteredMares: function () {
+      return this.mares.filter((mare) => {
+        return mare.name.match(this.search)
+      })
+    }
   }
 };
 </script>

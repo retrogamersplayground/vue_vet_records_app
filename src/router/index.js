@@ -17,7 +17,8 @@ import firebase from 'firebase'
 Vue.use(Router)
 
 let router = new Router({
-  routes: [{
+  routes: [
+    {
       path: '/',
       name: 'dashboard',
       component: Dashboard,
