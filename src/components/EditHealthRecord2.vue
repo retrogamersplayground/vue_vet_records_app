@@ -52,9 +52,9 @@
           </div>
         </div>
         <div class="row">
-          <label for="ut_ct_tone">UT/CT Tone</label>
+          <label for="ut_cx_tone">UT/CX Tone</label>
           <div class="input-field col s12">
-            <input type="text" v-model="ut_ct_tone" id="ut_ct_tone" />
+            <input type="text" v-model="ut_cx_tone" id="ut_cx_tone" />
           </div>
         </div>
         <div class="row">
@@ -105,7 +105,7 @@ export default {
       r_ovary: null,
       uterine_edema: null,
       uterine_fluid: null,
-      ut_ct_tone: null,
+      ut_cx_tone: null,
       teasing: null,
       bred_treatments: null,
       initials: null
@@ -126,7 +126,7 @@ export default {
             vm.r_ovary = doc.data().r_ovary;
             vm.uterine_edema = doc.data().uterine_edema;
             vm.uterine_fluid = doc.data().uterine_fluid;
-            vm.ut_ct_tone = doc.data().ut_ct_tone;
+            vm.ut_cx_tone = doc.data().ut_cx_tone;
             vm.teasing = doc.data().teasing;
             vm.bred_treatments = doc.data().bred_treatments;
             vm.initials = doc.data().initials;
@@ -152,7 +152,7 @@ export default {
             this.r_ovary = doc.data().r_ovary;
             this.uterine_edema = doc.data().uterine_edema;
             this.uterine_fluid = doc.data().uterine_fluid;
-            this.ut_ct_tone = doc.data().ut_ct_tone;
+            this.ut_cx_tone = doc.data().ut_cx_tone;
             this.teasing = doc.data().teasing;
             this.bred_treatments = doc.data().bred_treatments;
             this.initials = doc.data().initials;
@@ -175,7 +175,7 @@ export default {
                 r_ovary: this.r_ovary,
                 uterine_edema: this.uterine_edema,
                 uterine_fluid: this.uterine_fluid,
-                ut_ct_tone: this.ut_ct_tone,
+                ut_cx_tone: this.ut_cx_tone,
                 teasing: this.teasing,
                 bred_treatments: this.bred_treatments,
                 initials: this.initials

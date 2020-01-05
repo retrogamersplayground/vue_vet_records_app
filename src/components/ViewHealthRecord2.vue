@@ -18,7 +18,7 @@
           <li class="collection-item">Right Ovary: {{horse_health2.r_ovary}}</li>
           <li class="collection-item">Uterine Edema: {{horse_health2.uterine_edema}}</li>
           <li class="collection-item">Uterine Fluid: {{horse_health2.uterine_fluid}}</li>
-          <li class="collection-item">UT/CT Tone: {{horse_health2.ut_ct_tone}}</li>
+          <li class="collection-item">UT/CX Tone: {{horse_health2.ut_cx_tone}}</li>
           <li class="collection-item">Teasing: {{horse_health2.teasing}}</li>
           <li class="collection-item">Bred/Treatment: {{horse_health2.bred_treatments}}</li>
           <li class="collection-item">Initials: {{horse_health2.initials}}</li>
@@ -64,7 +64,7 @@ export default {
             r_ovary: doc.data().r_ovary,
             uterine_edema: doc.data().uterine_edema,
             uterine_fluid: doc.data().uterine_fluid,
-            ut_ct_tone: doc.data().ut_ct_tone,
+            ut_cx_tone: doc.data().ut_cx_tone,
             teasing: doc.data().teasing,
             bred_treatments: doc.data().bred_treatments,
             initials: doc.data().initials
