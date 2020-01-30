@@ -15,9 +15,6 @@
             <li v-if="isLoggedIn" class="navLi">
               <router-link to="/">DASHBOARD</router-link>
             </li>
-            <li v-if="isLoggedIn" class="navLi">
-              <router-link to="/landing">Landing Page</router-link>
-            </li>
             <li v-if="!isLoggedIn" class="navLi">
               <router-link to="/login">LOGIN</router-link>
             </li>
