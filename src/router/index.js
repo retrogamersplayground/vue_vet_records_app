@@ -12,6 +12,7 @@ import EditHealthRecord2 from '@/components/EditHealthRecord2'
 import Login from '@/components/Login'
 import Register from '@/components/Register'
 import ResetPassword from '@/components/ResetPassword'
+import LandingPage from '@/components/LandingPage'
 import firebase from 'firebase'
 
 Vue.use(Router)
@@ -110,6 +111,14 @@ let router = new Router({
       path: '/:mare_id',
       name: 'add-health-record',
       component: AddHealthRecord,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/landing',
+      name: 'landing-page',
+      component: LandingPage,
       meta: {
         requiresAuth: true
       }
