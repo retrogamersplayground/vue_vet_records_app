@@ -5,6 +5,8 @@ import Login from '@/components/Login'
 import Register from '@/components/Register'
 import ResetPassword from '@/components/ResetPassword'
 import LandingPage from '@/components/LandingPage'
+import Farm from '@/components/Farm'
+import Payment from '@/components/Payment'
 import AddMare from '@/components/AddMare'
 import ViewMare from '@/components/ViewMare'
 import EditMare from '@/components/EditMare'
@@ -55,6 +57,21 @@ let router = new Router({
       path: '/landing',
       name: 'landing-page',
       component: LandingPage,
+      meta: {
+        requiresGuest: true
+      }
+    },
+    {
+      path: '/farm',
+      name: 'farm',
+      component: Farm,
+      meta: {
+        requiresGuest: true
+      }
+    },
+    { path: '/payment',
+      name: 'payment',
+      component: Payment,
       meta: {
         requiresGuest: true
       }

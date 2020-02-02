@@ -43,8 +43,8 @@ export default {
         .signInWithEmailAndPassword(this.email, this.password)
         .then(
           user => {
-            alert(`You are logged in as ${this.email}`);
-            this.$router.go({ path: this.$router.path });
+            alert(`You are logged in as ${this.email}`)
+            this.$router.go({ path: this.$router.path })
           },
           err => {
             alert(err.message);
@@ -61,7 +61,7 @@ router-link {
   color: #ffffff;
 }
 .login {
-  margin-top: 50%;
+  margin-top: 150px;
 }
 button {
     padding: 20px 50px;

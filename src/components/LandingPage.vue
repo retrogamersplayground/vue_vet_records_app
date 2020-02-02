@@ -52,7 +52,7 @@
                         Signing up for the service is simple. 
                     </p>
                     <div class="buttonDiv">
-                        <a class="button" href=""><button>Register Now!</button></a>
+                        <router-link to="/farm"><button>Register Now!</button></router-link>
                     </div>
                 </div><!--End of Section-->
                     
@@ -136,7 +136,7 @@
                         Signing up for the service is simple. 
                     </p>
                     <div class="buttonDiv">
-                        <a class="button" href=""><button>Register Now!</button></a>
+                        <router-link to="/farm"><button>Register Now!</button></router-link>
                     </div>
                 </div><!--End of Section-->        
                 <footer>

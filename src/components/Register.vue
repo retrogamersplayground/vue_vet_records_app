@@ -22,6 +22,11 @@
         </div>
       </div>
     </div>
+    <div class="fixed-action-btn">
+      <router-link to="/login" class="btn-floating btn-large grey">
+        <i class="fa fa-arrow-left"></i>
+      </router-link>
+    </div>
   </div>
 </template>
 
@@ -60,7 +65,7 @@ label {
   color: #ffffff;
 }
 .login {
-  margin-top: 50%;
+  margin-top: 150px;
 }
 button {
     padding: 20px 50px;

@@ -146,13 +146,13 @@
 </template>
 
 <script>
-import db from "./firebaseInit";
+import db from './firebaseInit'
 export default {
-  name: "add-health-record",
+  name: 'add-health-record',
   data() {
     return {
-      health_id: "health_id _" + Math.round(new Date().getTime() / 1000),
-      health_id2: "health_id2 _" + Math.round(new Date().getTime() / 1000),
+      health_id: 'health_id _' + Math.round(new Date().getTime() / 1000),
+      health_id2: 'health_id2' + Math.round(new Date().getTime() / 1000),
       mare_id: null,
       name: null,
       hr_date: null,
@@ -168,38 +168,38 @@ export default {
       teasing: null,
       bred_treatments: null,
       initials: null
-    };
+    }
   },
   beforeRouteEnter(to, from, next) {
-    db.collection("mares")
-      .where("mare_id", "==", to.params.mare_id)
+    db.collection('mares')
+      .where('mare_id', '==', to.params.mare_id)
       .get()
       .then(querySnapshot => {
         querySnapshot.forEach(doc => {
           next(vm => {
-            vm.mare_id = doc.data().mare_id;
-            vm.name = doc.data().name;
-          });
-        });
-      });
+            vm.mare_id = doc.data().mare_id
+            vm.name = doc.data().name
+          })
+        })
+      })
   },
   watch: {
-    $route: "fetchData"
+    $route: 'fetchData'
   },
   methods: {
     fetchData() {
-      db.collection("mares")
-        .where("mare_id", "==", this.$route.params.mare_id)
+      db.collection('mares')
+        .where('mare_id', '==', this.$route.params.mare_id)
         .get()
         .then(querySnapshot => {
           querySnapshot.forEach(doc => {
-            this.mare_id = doc.data().mare_id;
-            this.name = doc.data().name;
-          });
-        });
+            this.mare_id = doc.data().mare_id
+            this.name = doc.data().name
+          })
+        })
     },
     addHealthRecord() {
-      db.collection("horse_health")
+      db.collection('horse_health')
         .add({
           mare_id: this.mare_id,
           health_id: this.health_id,
@@ -209,11 +209,11 @@ export default {
           vaccination: this.vaccination,
           hr_comments: this.hr_comments
         })
-        .then(docRef => this.$router.push("/"))
-        .catch(error => console.log(err));
+        .then(docRef => this.$router.push('/'))
+        .catch(error => console.log(err))
     },
     addHealthRecord2() {
-      db.collection("horse_health2")
+      db.collection('horse_health2')
         .add({
           mare_id: this.mare_id,
           health_id2: this.health_id2,
@@ -228,9 +228,9 @@ export default {
           bred_treatments: this.bred_treatments,
           initials: this.initials
         })
-        .then(docRef => this.$router.push("/"))
+        .then(docRef => this.$router.push('/'))
         .catch(error => console.log(err));
     }
   }
-};
+}
 </script>
