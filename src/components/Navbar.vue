@@ -3,7 +3,7 @@
     <nav>
       <div class="nav-wrapper green">
         <div class="container">
-          <router-link to="/" class="brand-logo" id="brand-logo">Mare Records</router-link>
+          <router-link to="/" class="brand-logo" id="brand-logo">Simple Mare Records</router-link>
           <a href="#" data-target="mobile-demo" class="sidenav-trigger right">
             <i class="material-icons" @click="dropDown" id="menu">menu</i>
             <i class="material-icons" id="clear" @click="hide">clear</i>
