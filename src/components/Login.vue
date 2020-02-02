@@ -16,7 +16,7 @@
                 <input type="text" id="password" v-model="password" />
                 <label class="white-text" for="email">Password</label>
               </div>
-              <button v-on:click="login" class="btn btn-large grey lighten-4 black-text">Login</button>
+              <button v-on:click="login" class="">Login</button>
             </form>
             <router-link to="/reset" tag="h6">Forgot Your Password?</router-link>
           </div>
@@ -59,5 +59,22 @@ export default {
 <style scoped>
 router-link {
   color: #ffffff;
+}
+.login {
+  margin-top: 50%;
+}
+button {
+    padding: 20px 50px;
+    background-color: #ffffff;
+    color: #4CAF50;
+    font-size: 24px;
+    border: 1px solid #4CAF50;
+    border-radius: 4px;
+}
+button:hover {
+    color: #ffffff;
+    background-color: #4CAF50;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
 }
 </style>

@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col s12 m8 offset-m2">
-          <div class="login card-panel grey lighten-4 black-text center">
+          <div class="login card-panel green white-text center">
             <h3>Register</h3>
             <form>
               <div class="input-field">
@@ -16,7 +16,7 @@
                 <input type="text" id="password" v-model="password" />
                 <label for="email">Password</label>
               </div>
-              <button v-on:click="register" class="btn btn-large grey lighten-4 black-text">Register</button>
+              <button v-on:click="register" class="">Register</button>
             </form>
           </div>
         </div>
@@ -54,3 +54,26 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+label {
+  color: #ffffff;
+}
+.login {
+  margin-top: 50%;
+}
+button {
+    padding: 20px 50px;
+    background-color: #ffffff;
+    color: #4CAF50;
+    font-size: 24px;
+    border: 1px solid #4CAF50;
+    border-radius: 4px;
+}
+button:hover {
+    color: #ffffff;
+    background-color: #4CAF50;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+}
+</style>
