@@ -33,7 +33,9 @@ export default {
   data: function() {
     return {
       email: '',
-      password: ''
+      password: '',
+      farmId: this.$route.params.farmId,
+      payment: this.$route.params.payment
     };
   },
   methods: {

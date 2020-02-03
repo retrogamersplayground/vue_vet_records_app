@@ -8,9 +8,9 @@
                 <div class="row">
                     <form @submit.prevent="addFarm" class="col s12">
                         <div class="row">
-                            <label for="farm_name">Farm or Business Name</label>
+                            <label for="farmName">Farm or Business Name</label>
                             <div class="input-field col s12">
-                                <input type="text" v-model="farm_name" id="farm_name">
+                                <input type="text" v-model="farmName" id="farmName">
                             </div>
                         </div>
                         <button type="submit" class="btn-floating btn-large green">
@@ -34,20 +34,26 @@ export default {
     name: 'farm',
     data: function() {
         return {
-            farm_id: 'farm_id' + '_' + Math.round(new Date().getTime() / 1000), 
-            farm_name: null
+            farmId: 'farmId' + '_' + Math.round(new Date().getTime() / 1000), 
+            farmName: null
         }
     },
     methods: {
         addFarm() {
         db.collection("farms")
             .add({
-                farm_name: this.farm_name
+                farmId: this.farmId,
+                farmName: this.farmName
             })
-            .then(docRef => this.$router.push('/payment'))
+            .then(() => {
+                this.$router.push({
+                    name: 'payment',
+                    params: {farmId: this.farmId}
+                })
+            })
             .catch(error => console.log(error));
-            console.log(this.farm_id)
-            console.log(this.farm_name)
+            console.log(this.farmId)
+            console.log(this.farmName)
         }
     }
 }

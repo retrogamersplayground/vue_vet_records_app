@@ -22,7 +22,7 @@ Vue.use(Router)
 let router = new Router({
   routes: [
     {
-      path: '/',
+      path: '/dashboard',
       name: 'dashboard',
       component: Dashboard,
       meta: {
@@ -62,7 +62,7 @@ let router = new Router({
       }
     },
     {
-      path: '/farm',
+      path: '/',
       name: 'farm',
       component: Farm,
       meta: {
@@ -77,7 +77,7 @@ let router = new Router({
       }
     },
     {
-      path: '/add',
+      path: '/add_mare',
       name: 'add-mare',
       component: AddMare,
       meta: {
@@ -166,7 +166,7 @@ router.beforeEach((to, from, next) => {
     if (firebase.auth().currentUser) {
       //Go to login
       next({
-        path: '/',
+        path: '/dashboard',
         query: {
           redirect: to.fullPath
         }
