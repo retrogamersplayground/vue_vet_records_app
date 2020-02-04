@@ -103,7 +103,7 @@ export default {
   computed: {
     filteredMares: function () {
       return this.mares.filter((mare) => {
-        return mare.name.match(this.search)
+        return mare.name.toLowerCase().match(this.search.toLowerCase())
       })
     }
   }
