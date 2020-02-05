@@ -140,15 +140,14 @@ export default {
 .loginLi:hover {
   background-color: lightgray;
 }
-
 @media only screen and (max-width: 992px) {
   .container {
     margin-bottom: none;
   }
 }
-@media only screen and (max-width: 357px) {
+@media only screen and (max-width: 564px) {
   .brand-logo {
-    position: relative;
+    display: none;
   }
 }
 </style>

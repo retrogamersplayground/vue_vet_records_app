@@ -45,9 +45,9 @@
 </template>
 
 <script>
-import db from "./firebaseInit";
+import db from './firebaseInit'
 export default {
-  name: "dashboard",
+  name: 'dashboard',
   data() {
     return {
       mares: [],
@@ -58,8 +58,8 @@ export default {
   },
   created() {
     db
-      .collection("mares")
-      .orderBy("name")
+      .collection('mares')
+      .orderBy('name')
       .get()
       .then(querySnapshot => {
         querySnapshot.forEach(doc => {
@@ -67,9 +67,9 @@ export default {
             id: doc.id,
             mare_id: doc.data().mare_id,
             name: doc.data().name
-          };
-          this.mares.push(data);
-        });
+          }
+          this.mares.push(data)
+        })
       }),
       db
         .collection("horse_health")
@@ -81,13 +81,13 @@ export default {
               id: doc.id,
               mare_id: doc.data().mare_id,
               name: doc.data().name
-            };
-            this.horse_health.push(data);
-          });
+            }
+            this.horse_health.push(data)
+          })
         }),
       db
-        .collection("horse_health2")
-        .orderBy("name")
+        .collection('horse_health2')
+        .orderBy('name')
         .get()
         .then(querySnapshot => {
           querySnapshot.forEach(doc => {
@@ -95,10 +95,10 @@ export default {
               id: doc.id,
               mare_id: doc.data().mare_id,
               name: doc.data().name
-            };
-            this.horse_health2.push(data);
-          });
-        });
+            }
+            this.horse_health2.push(data)
+          })
+        })
   },
   computed: {
     filteredMares: function () {
@@ -107,7 +107,7 @@ export default {
       })
     }
   }
-};
+}
 </script>
 
 <style scoped>

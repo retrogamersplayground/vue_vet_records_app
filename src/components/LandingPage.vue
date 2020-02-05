@@ -273,8 +273,7 @@ button:hover {
 }
 .imageDiv {
     display: inline-block;
-    width: 28%;
-    
+    width: 28%; 
 }
 .imageDiv img {
     width: 80%;
@@ -285,5 +284,28 @@ button:hover {
     text-align: left;
     margin-left: auto;
     margin-right: auto;
+}
+@media only screen and (max-width: 1264px) {
+    .preShowcase1 {
+        width: 100%;
+        display: block;
+    }
+    .preShowcase2 {
+        width: 100%;
+        display: block;
+    }
+    .preShowcase1 #h2Green {
+        text-align: center;
+    }
+    .socialUl {
+        text-align: center;
+    }
+}
+@media only screen and (max-width: 550px) {
+    .imageDiv {
+        display: block;
+        width: 90%;
+        margin: auto;
+    }
 }
 </style>

@@ -85,7 +85,7 @@ let router = new Router({
       }
     },
     {
-      path: ':mare_id',
+      path: '/:mare_id',
       name: 'view-mare',
       component: ViewMare,
       meta: {
@@ -101,7 +101,7 @@ let router = new Router({
       }
     },
     {
-      path: ':mare_id',
+      path: '/:mare_id',
       name: 'add-health-record',
       component: AddHealthRecord,
       meta: {
@@ -109,7 +109,7 @@ let router = new Router({
       }
     },
     {
-      path: ':mare_id',
+      path: '/:mare_id',
       name: 'view-health-record',
       component: ViewHealthRecord,
       meta: {
@@ -117,7 +117,7 @@ let router = new Router({
       }
     },
     {
-      path: ':mare_id',
+      path: '/:mare_id',
       name: 'view-health-record2',
       component: ViewHealthRecord2,
       meta: {
