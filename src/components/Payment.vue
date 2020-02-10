@@ -1,42 +1,79 @@
 <template>
     <div>
-        <template>
-            <h1>PAYMENT</h1>
-        </template>
+        <h2>PAYMENT</h2>
+        <p>To sign up for our service please click the checkout button below. Your $50 payment will automatically be completed monthly.</p>
+        <!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
+        <div class="buttonDiv">
+            <div>
+                <button id="checkout-button-plan_GhtXUAapGzZiKS" role="link">
+                    Checkout
+                </button>
+            </div> 
+        </div>
+        <div id="error-message"></div>
     </div>
 </template>
-
 <script>
-import db from "./firebaseInit";
 export default {
     name: 'payment',
-    data: function() {
+    data() {
         return {
-            farmId: this.$route.params.farmId,
-            paid: false
         }
     },
-    methods: {
-        addPaymentStatus() {
-        db.collection("farms")
-            .add({
-                paid: this.paid
+    mounted () {
+        (function() {
+        var stripe = Stripe('pk_test_rmvxS3TrkGyvqF5nIitvGu8L00PK5JMuRs');
+
+        var checkoutButton = document.getElementById('checkout-button-plan_GhtXUAapGzZiKS');
+        checkoutButton.addEventListener('click', function () {
+            // When the customer clicks on the button, redirect
+            // them to Checkout.
+            stripe.redirectToCheckout({
+            items: [{plan: 'plan_GhtXUAapGzZiKS', quantity: 1}],
+
+            // Do not rely on the redirect to the successUrl for fulfilling
+            // purchases, customers may not always reach the success_url after
+            // a successful payment.
+            // Instead use one of the strategies described in
+            // https://stripe.com/docs/payments/checkout/fulfillment
+            successUrl: window.location.protocol + '//simplemarerecords.com/register',
+            cancelUrl: window.location.protocol + '//simplemarerecords.com/landing',
             })
-            .then(() => {
-                this.$router.push({
-                    name: 'login',
-                    params: {farmId: this.farmId},
-                    params: {paid: this.paid}
-                })
-            })
-            .catch(error => console.log(error));
-            console.log(this.farmId)
-            console.log(this.farmName)
-            console.log('Paid?' + ' ' + this.paid)
-        }
+            .then(function (result) {
+            if (result.error) {
+                // If `redirectToCheckout` fails due to a browser or network
+                // error, display the localized error message to your customer.
+                var displayError = document.getElementById('error-message');
+                displayError.textContent = result.error.message;
+            }
+            });
+        });
+        })();
     }
 }
 </script>
-
 <style scoped>
+p {
+    text-align: center;
+}
+.buttonDiv {
+    margin-top: 50px;
+}
+.buttonDiv div {
+    text-align: center;
+}
+button {
+    padding: 20px 50px;
+    background-color: #ffffff;
+    color: #4CAF50;
+    font-size: 24px;
+    border: 1px solid #4CAF50;
+    border-radius: 4px;
+}
+button:hover {
+    color: #ffffff;
+    background-color: #4CAF50;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+}
 </style>

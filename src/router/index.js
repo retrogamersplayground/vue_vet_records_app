@@ -15,6 +15,7 @@ import ViewHealthRecord from '@/components/ViewHealthRecord'
 import ViewHealthRecord2 from '@/components/ViewHealthRecord2'
 import EditHealthRecord from '@/components/EditHealthRecord'
 import EditHealthRecord2 from '@/components/EditHealthRecord2'
+import Checkout from '@/components/Checkout'
 import firebase from 'firebase'
 
 Vue.use(Router)
@@ -72,6 +73,14 @@ let router = new Router({
     { path: '/payment',
       name: 'payment',
       component: Payment,
+      meta: {
+        requiresGuest: true
+      }
+    },
+    {
+      path: '/checkout',
+      name: 'checkout',
+      component: Checkout,
       meta: {
         requiresGuest: true
       }
@@ -166,7 +175,7 @@ router.beforeEach((to, from, next) => {
     if (firebase.auth().currentUser) {
       //Go to login
       next({
-        path: '/dashboard',
+        path: '/payment',
         query: {
           redirect: to.fullPath
         }
