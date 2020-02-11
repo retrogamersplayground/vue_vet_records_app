@@ -7,7 +7,7 @@ const stripe = require('stripe')('sk_test_j0G5TyyuIi9mOUBpXzjb4LKC00swJT23z6')
 // exports.helloWorld = functions.https.onRequest((request, response) => {
 //  response.send("Hello from Firebase!");
 // });
-exports.createStripeCharge = functions.firestore
+/*exports.createStripeCharge = functions.firestore
     .document('charges/{pushId}')
     .onCreate(async (snap, context) => {
     try {
@@ -33,7 +33,7 @@ exports.createStripeCharge = functions.firestore
 })
 function userFacingMessage(error) {
     return error.type ? error.message : 'An error occurred, developers have been alerted';
-}
+}*/
 /**
  * Copyright 2016 Google Inc. All Rights Reserved.
  *
