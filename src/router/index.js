@@ -15,7 +15,7 @@ import ViewHealthRecord from '@/components/ViewHealthRecord'
 import ViewHealthRecord2 from '@/components/ViewHealthRecord2'
 import EditHealthRecord from '@/components/EditHealthRecord'
 import EditHealthRecord2 from '@/components/EditHealthRecord2'
-import Checkout from '@/components/Checkout'
+//import Checkout from '@/components/Checkout'
 import firebase from 'firebase'
 
 Vue.use(Router)
@@ -74,17 +74,17 @@ let router = new Router({
       name: 'payment',
       component: Payment,
       meta: {
-        requiresGuest: true
+        requiresAuth: true
       }
     },
-    {
-      path: '/checkout',
-      name: 'checkout',
-      component: Checkout,
-      meta: {
-        requiresGuest: true
-      }
-    },
+    //{
+      //path: '/checkout',
+      //name: 'checkout',
+      //component: Checkout,
+      //meta: {
+       // requiresAuth: true
+      //}
+    //},
     {
       path: '/add_mare',
       name: 'add-mare',

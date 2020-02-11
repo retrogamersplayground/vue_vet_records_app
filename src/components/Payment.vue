@@ -26,17 +26,17 @@ export default {
 
         var checkoutButton = document.getElementById('checkout-button-plan_GhtXUAapGzZiKS');
         checkoutButton.addEventListener('click', function () {
-            // When the customer clicks on the button, redirect
-            // them to Checkout.
+            //When the customer clicks on the button, redirect
+            //them to Checkout.
             stripe.redirectToCheckout({
             items: [{plan: 'plan_GhtXUAapGzZiKS', quantity: 1}],
 
-            // Do not rely on the redirect to the successUrl for fulfilling
-            // purchases, customers may not always reach the success_url after
-            // a successful payment.
-            // Instead use one of the strategies described in
-            // https://stripe.com/docs/payments/checkout/fulfillment
-            successUrl: window.location.protocol + '//simplemarerecords.com/register',
+            //Do not rely on the redirect to the successUrl for fulfilling
+            //purchases, customers may not always reach the success_url after
+            //a successful payment.
+            //Instead use one of the strategies described in
+            //https://stripe.com/docs/payments/checkout/fulfillment
+            successUrl: window.location.protocol + '//simplemarerecords.com/#/',
             cancelUrl: window.location.protocol + '//simplemarerecords.com/landing',
             })
             .then(function (result) {
