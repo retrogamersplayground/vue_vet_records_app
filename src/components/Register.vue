@@ -23,7 +23,7 @@
       </div>
     </div>
     <div class="fixed-action-btn">
-      <router-link to="/login" class="btn-floating btn-large grey">
+      <router-link to="/landing" class="btn-floating btn-large grey">
         <i class="fa fa-arrow-left"></i>
       </router-link>
     </div>
