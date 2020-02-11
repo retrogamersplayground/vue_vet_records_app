@@ -20,11 +20,6 @@
                 </div>
             </li>
         </ul>
-        <div class="fixed-action-btn">
-            <router-link to="/landing" class="btn-floating btn-large grey">
-                <i class="fa fa-arrow-left"></i>
-            </router-link>
-        </div>
     </div>
 </template>
 
@@ -47,7 +42,7 @@ export default {
             })
             .then(() => {
                 this.$router.push({
-                    name: 'payment',
+                    name: 'dashboard',
                     params: {farmId: this.farmId}
                 })
             })
