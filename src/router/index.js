@@ -67,7 +67,7 @@ let router = new Router({
       name: 'farm',
       component: Farm,
       meta: {
-        requiresGuest: true
+        requiresAuth: true
       }
     },
     { path: '/payment',
