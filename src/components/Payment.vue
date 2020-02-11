@@ -37,7 +37,7 @@ export default {
             //Instead use one of the strategies described in
             //https://stripe.com/docs/payments/checkout/fulfillment
             successUrl: window.location.protocol + 'https://hopeful-meitner-cb550e.netlify.com/#/',
-            cancelUrl: window.location.protocol + '//https://hopeful-meitner-cb550e.netlify.com/landing',
+            cancelUrl: window.location.protocol + 'https://hopeful-meitner-cb550e.netlify.com/landing',
             })
             .then(function (result) {
             if (result.error) {
