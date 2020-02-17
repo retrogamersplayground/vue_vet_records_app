@@ -1,4 +1,4 @@
-<template>
+<!--<template>
     <div>
         <ul class="collection with-header">
             <li class="collection-header">
@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import db from "./firebaseInit";
+/*import db from "./firebaseInit";
 export default {
     name: 'farm',
     data: function() {
@@ -51,8 +51,9 @@ export default {
             console.log(this.farmName)
         }
     }
-}
+}*/
 </script>
 
 <style scoped>
 </style>
+-->
