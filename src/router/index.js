@@ -23,7 +23,7 @@ Vue.use(Router)
 let router = new Router({
   routes: [
     {
-      path: '/dashboard',
+      path: '/dashboard/:farmId',
       name: 'dashboard',
       component: Dashboard,
       meta: {
@@ -86,7 +86,7 @@ let router = new Router({
       //}
     //},
     {
-      path: '/add_mare',
+      path: '/add_mare/:farmId',
       name: 'add-mare',
       component: AddMare,
       meta: {
