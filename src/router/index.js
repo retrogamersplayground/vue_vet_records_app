@@ -5,7 +5,7 @@ import Login from '@/components/Login'
 import Register from '@/components/Register'
 import ResetPassword from '@/components/ResetPassword'
 import LandingPage from '@/components/LandingPage'
-import Farm from '@/components/Farm'
+//import Farm from '@/components/Farm'
 import Payment from '@/components/Payment'
 import AddMare from '@/components/AddMare'
 import ViewMare from '@/components/ViewMare'
@@ -15,7 +15,6 @@ import ViewHealthRecord from '@/components/ViewHealthRecord'
 import ViewHealthRecord2 from '@/components/ViewHealthRecord2'
 import EditHealthRecord from '@/components/EditHealthRecord'
 import EditHealthRecord2 from '@/components/EditHealthRecord2'
-//import Checkout from '@/components/Checkout'
 import firebase from 'firebase'
 
 Vue.use(Router)
@@ -23,7 +22,7 @@ Vue.use(Router)
 let router = new Router({
   routes: [
     {
-      path: '/dashboard',
+      path: '/dashboard/:farmId',
       name: 'dashboard',
       component: Dashboard,
       meta: {
@@ -62,14 +61,14 @@ let router = new Router({
         requiresGuest: true
       }
     },
-    {
+    /*{
       path: '/',
       name: 'farm',
       component: Farm,
       meta: {
         requiresAuth: true
       }
-    },
+    },*/
     { path: '/payment',
       name: 'payment',
       component: Payment,
@@ -77,16 +76,8 @@ let router = new Router({
         requiresAuth: true
       }
     },
-    //{
-      //path: '/checkout',
-      //name: 'checkout',
-      //component: Checkout,
-      //meta: {
-       // requiresAuth: true
-      //}
-    //},
     {
-      path: '/add_mare',
+      path: '/add_mare/:farmId',
       name: 'add-mare',
       component: AddMare,
       meta: {

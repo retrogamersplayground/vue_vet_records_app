@@ -161,9 +161,9 @@
 </template>
 
 <script>
-import db from "./firebaseInit";
+import db from './firebaseInit'
 export default {
-  name: "add-mare",
+  name: 'add-mare',
   data() {
     return {
       mare_id: "mare_id _" + Math.round(new Date().getTime() / 1000),
@@ -190,11 +190,11 @@ export default {
       stallion_phone: null,
       comments: null,
       uterine_cysts: null
-    };
+    }
   },
   methods: {
     saveMare() {
-      db.collection("mares")
+      db.collection('mares')
         .add({
           mare_id: this.mare_id,
           name: this.name,
@@ -221,9 +221,9 @@ export default {
           comments: this.comments,
           uterine_cysts: this.uterine_cysts
         })
-        .then(docRef => this.$router.push("/"))
-        .catch(error => console.log(err));
+        .then(docRef => this.$router.push('/'))
+        .catch(error => console.log(err))
     }
   }
-};
+}
 </script>

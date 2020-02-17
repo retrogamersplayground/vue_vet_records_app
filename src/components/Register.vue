@@ -31,14 +31,16 @@
 </template>
 
 <script>
-import firebase from "firebase";
+import firebase from 'firebase'
 export default {
-  name: "register",
+  name: 'register',
   data: function() {
     return {
-      email: "",
-      password: ""
-    };
+      email: '',
+      password: '',
+      //user: firebase.auth().currentUser,
+      //user_id: null
+    }
   },
   methods: {
     register: function(e) {
@@ -47,17 +49,30 @@ export default {
         .createUserWithEmailAndPassword(this.email, this.password)
         .then(
           user => {
-            alert(`Account created for ${this.email}`);
-            this.$router.go({ path: this.$router.path });
+            alert(`Account created for ${this.email}`)
+            this.$router.go({ path: this.$router.path })
           },
           err => {
-            alert(err.message);
+            alert(err.message)
           }
-        );
-      e.preventDefault();
+        )
+        /*.then(
+          this.saveUser()
+        )*/
+      e.preventDefault()
     }
+    /*saveUser() {
+      db.collection('users')
+        .add({
+          email: this.email,
+          password: this.password,
+          user_id: this.user.uid
+        })
+        .then(docRef => this.$router.push('/'))
+        .catch(error => console.log(err))
+    }*/
   }
-};
+}
 </script>
 
 <style scoped>
