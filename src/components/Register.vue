@@ -50,8 +50,8 @@ export default {
         .createUserWithEmailAndPassword(this.email, this.password)
         .then(
           user => {
-            alert(`Account created for ${this.email}`)
-            this.$route._router.go({ '/login' })
+            alert(`Account created for ${this.email}. Please login`)
+            //this.$route._router.go({ '/login' })
           },
           err => {
             alert(err.message)
