@@ -70,6 +70,7 @@ export default {
         })
         .then(docRef => this.$router.push('/'))
         .catch(error => console.log(err))
+        console.log('user saved')
     }
   }
 }
