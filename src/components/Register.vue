@@ -32,6 +32,7 @@
 
 <script>
 import firebase from 'firebase'
+import db from './firebaseInit'
 export default {
   name: 'register',
   data: function() {
