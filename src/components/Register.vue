@@ -38,8 +38,8 @@ export default {
     return {
       email: '',
       password: '',
-      //user: firebase.auth().currentUser,
-      //user_id: null
+      user: firebase.auth().currentUser,
+      user_id: null
     }
   },
   methods: {
@@ -56,12 +56,12 @@ export default {
             alert(err.message)
           }
         )
-        /*.then(
+        .then(
           this.saveUser()
-        )*/
+        )
       e.preventDefault()
-    }
-    /*saveUser() {
+    },
+    saveUser() {
       db.collection('users')
         .add({
           email: this.email,
@@ -70,7 +70,7 @@ export default {
         })
         .then(docRef => this.$router.push('/'))
         .catch(error => console.log(err))
-    }*/
+    }
   }
 }
 </script>
