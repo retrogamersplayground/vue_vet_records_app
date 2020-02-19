@@ -166,7 +166,7 @@ router.beforeEach((to, from, next) => {
     if (firebase.auth().currentUser) {
       //Go to login
       next({
-        path: '/login',
+        path: '/payment',
         query: {
           redirect: to.fullPath
         }

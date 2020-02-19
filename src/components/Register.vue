@@ -51,7 +51,7 @@ export default {
         .then(
           user => {
             alert(`Account created for ${this.email}`)
-            this.$router.go({ path: this.$router.path })
+            this.$route._router.go({ '/login' })
           },
           err => {
             alert(err.message)
