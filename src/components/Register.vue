@@ -57,9 +57,6 @@ export default {
             alert(err.message)
           }
         )
-        .then(
-          this.saveUser()
-        )
       e.preventDefault()
     },
     saveUser() {
