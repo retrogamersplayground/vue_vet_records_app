@@ -16,7 +16,7 @@
                 <input type="text" id="password" v-model="password" />
                 <label for="email">Password</label>
               </div>
-              <button v-on:click="register" class="">Register</button>
+              <button v-on:click="register; saveUser();" class="">Register</button>
             </form>
           </div>
         </div>
@@ -55,9 +55,6 @@ export default {
           err => {
             alert(err.message)
           }
-        )
-        .then(
-          this.saveUser()
         )
       e.preventDefault()
     },
