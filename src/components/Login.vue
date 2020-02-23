@@ -38,10 +38,8 @@ export default {
   data: function() {
     return {
       email: '',
-      password: '',
-      farmId: this.$route.params.farmId,
-      payment: this.$route.params.payment
-    };
+      password: ''
+    }
   },
   methods: {
     login: function(e) {
@@ -54,13 +52,13 @@ export default {
             this.$router.go({ path: this.$router.path })
           },
           err => {
-            alert(err.message);
+            alert(err.message)
           }
-        );
-      e.preventDefault();
+        )
+      e.preventDefault()
     }
   }
-};
+}
 </script>
 
 <style scoped>

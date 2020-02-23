@@ -38,13 +38,11 @@ export default {
   data: function() {
     return {
       email: '',
-      password: '',
-      user: firebase.auth().currentUser,
-      user_id: null
+      password: ''
     }
   },
-  methods: {
-    register: function(e) {
+    methods: {
+    register: async function(e) {
       firebase
         .auth()
         .createUserWithEmailAndPassword(this.email, this.password)
@@ -58,18 +56,19 @@ export default {
           }
         )
       e.preventDefault()
-    },
-    saveUser() {
+    }
+     /*saveUser() {
       db.collection('users')
         .add({
           email: this.email,
           password: this.password,
           user_id: this.user.uid
         })
+        console.log(this.user.uid)
         .then(docRef => this.$router.push('/'))
         .catch(error => console.log(err))
         console.log('user saved')
-    }
+    }*/
   }
 }
 </script>

@@ -19,30 +19,53 @@
     </div>
 </template>
 <script>
+import firebase from 'firebase'
+import db from './firebaseInit'
 export default {
     name: 'payment',
     data() {
         return {
+            email: '',
+            user: firebase.auth().currentUser,
+            user_id: null
         }
     },
+    methods: {
+        saveUser () {
+            db.collection('users')
+                .add({
+                email: this.email,
+                user_id: this.user.uid
+            })
+            //.then(docRef => this.$router.push('/'))
+            .catch(error => console.log(err))
+        }
+    },
+    created () {
+        if (this.user != null) {
+            this.email = this.user.email
+            this.user_id = this.user.uid
+        }
+        this.saveUser()
+    },
     mounted () {
-   (function() {
-  var stripe = Stripe('pk_test_rmvxS3TrkGyvqF5nIitvGu8L00PK5JMuRs');
+    (function() {
+        var stripe = Stripe('pk_test_rmvxS3TrkGyvqF5nIitvGu8L00PK5JMuRs');
 
-  var checkoutButton = document.getElementById('checkout-button-plan_GhtXUAapGzZiKS');
-  checkoutButton.addEventListener('click', function () {
-    // When the customer clicks on the button, redirect
-    // them to Checkout.
-    stripe.redirectToCheckout({
-      items: [{plan: 'plan_GhtXUAapGzZiKS', quantity: 1}],
+        var checkoutButton = document.getElementById('checkout-button-plan_GhtXUAapGzZiKS');
+        checkoutButton.addEventListener('click', function () {
+        // When the customer clicks on the button, redirect
+        // them to Checkout.
+        stripe.redirectToCheckout({
+            items: [{plan: 'plan_GhtXUAapGzZiKS', quantity: 1}],
 
-      // Do not rely on the redirect to the successUrl for fulfilling
-      // purchases, customers may not always reach the success_url after
-      // a successful payment.
-      // Instead use one of the strategies described in
-      // https://stripe.com/docs/payments/checkout/fulfillment
-      successUrl: window.location.protocol + '//hopeful-meitner-cb550e.netlify.com/#/',
-      cancelUrl: window.location.protocol + '//hopeful-meitner-cb550e.netlify.com/#/landing',
+        // Do not rely on the redirect to the successUrl for fulfilling
+        // purchases, customers may not always reach the success_url after
+        // a successful payment.
+        // Instead use one of the strategies described in
+        // https://stripe.com/docs/payments/checkout/fulfillment
+        successUrl: window.location.protocol + '//https://hopeful-meitner-cb550e.netlify.com/#/',
+        cancelUrl: window.location.protocol + '//https://hopeful-meitner-cb550e.netlify.com/#/landing',
     })
     .then(function (result) {
       if (result.error) {
@@ -51,9 +74,9 @@ export default {
         var displayError = document.getElementById('error-message');
         displayError.textContent = result.error.message;
       }
-    });
-  });
-})();
+    })
+  })
+})()
     }
 }
 </script>

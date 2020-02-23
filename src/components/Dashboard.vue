@@ -37,7 +37,7 @@
       </li>
     </ul>
     <div class="fixed-action-btn">
-      <router-link to="/add" class="btn-floating btn-large blue">
+      <router-link v-bind:to="{name:'add-mare', params: {user_id: user_id}}" class="btn-floating btn-large blue">
         <i class="fa fa-plus"></i>
       </router-link>
     </div>
@@ -45,6 +45,7 @@
 </template>
 
 <script>
+import firebase from 'firebase'
 import db from './firebaseInit'
 export default {
   name: 'dashboard',
@@ -53,18 +54,24 @@ export default {
       mares: [],
       horse_health: [],
       horse_health2: [],
-      search: ''
-    };
+      search: '',
+      user: firebase.auth().currentUser,
+      user_id: null
+    }
   },
   created() {
+    if (this.user !=null) {
+      this.user_id = this.user.uid
+    }
+    console.log('hey ' + this.user_id)
     db
-      .collection('mares')
-      .orderBy('name')
+      .collection('mares').where('user_id', '==', this.user_id)
       .get()
       .then(querySnapshot => {
         querySnapshot.forEach(doc => {
           const data = {
             id: doc.id,
+            user_id: doc.data().user_id,
             mare_id: doc.data().mare_id,
             name: doc.data().name
           }
@@ -102,9 +109,9 @@ export default {
   },
   computed: {
     filteredMares: function () {
-      return this.mares.filter((mare) => {
-        return mare.name.toLowerCase().match(this.search.toLowerCase())
-      })
+        return this.mares.filter((mare) => {
+          return mare.name.toLowerCase().match(this.search.toLowerCase())
+        })
     }
   }
 }

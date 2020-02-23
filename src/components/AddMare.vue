@@ -4,7 +4,13 @@
     <div class="row">
       <form @submit.prevent="saveMare" class="col s12">
         <div class="row">
-          <label for="mare_id">Mare ID#</label>
+          <label for="user_id">User Id#</label>
+          <div class="input-field col s12">
+            <input disabled type="text" v-model="user_id" id="user_id" required />
+          </div>
+        </div>
+        <div class="row">
+          <label for="mare_id">Mare Id#</label>
           <div class="input-field col s12">
             <input disabled type="text" v-model="mare_id" id="mare_id" required />
           </div>
@@ -166,6 +172,7 @@ export default {
   name: 'add-mare',
   data() {
     return {
+      user_id: this.$route.params.user_id,
       mare_id: "mare_id _" + Math.round(new Date().getTime() / 1000),
       name: null,
       color: null,
@@ -196,6 +203,7 @@ export default {
     saveMare() {
       db.collection('mares')
         .add({
+          user_id: this.user_id,
           mare_id: this.mare_id,
           name: this.name,
           color: this.color,
