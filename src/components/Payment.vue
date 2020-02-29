@@ -25,9 +25,11 @@ export default {
     name: 'payment',
     data() {
         return {
+            users: [],
             email: '',
             user: firebase.auth().currentUser,
-            user_id: null
+            user_id: null,
+            paid: false
         }
     },
     methods: {
@@ -35,18 +37,33 @@ export default {
             db.collection('users')
                 .add({
                 email: this.email,
-                user_id: this.user.uid
+                user_id: this.user.uid,
+                paid: true
             })
             //.then(docRef => this.$router.push('/'))
             .catch(error => console.log(err))
         }
     },
     created () {
+        db
+            .collection('users').where('user_id', '==', this.user_id)
+            .get()
+            .then(querySnapshot => {
+                querySnapshot.forEach(doc => {
+                const data = {
+                    id: doc.id,
+                    user_id: doc.data().user_id,
+                    email: doc.data().mare_id,
+                }
+                this.users.push(data)
+                })
+            }) 
         if (this.user != null) {
             this.email = this.user.email
             this.user_id = this.user.uid
+            saveUser()
         }
-        this.saveUser()
+
     },
     mounted () {
     (function() {
@@ -64,8 +81,8 @@ export default {
         // a successful payment.
         // Instead use one of the strategies described in
         // https://stripe.com/docs/payments/checkout/fulfillment
-        successUrl: window.location.protocol + '//https://hopeful-meitner-cb550e.netlify.com/#/',
-        cancelUrl: window.location.protocol + '//https://hopeful-meitner-cb550e.netlify.com/#/landing',
+        successUrl: window.location.protocol + '//localhost:8080/#/',
+        cancelUrl: window.location.protocol + '//localhost:8080/#/landing',
     })
     .then(function (result) {
       if (result.error) {
