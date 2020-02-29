@@ -81,8 +81,8 @@ export default {
         // a successful payment.
         // Instead use one of the strategies described in
         // https://stripe.com/docs/payments/checkout/fulfillment
-        successUrl: window.location.protocol + '//localhost:8080/#/',
-        cancelUrl: window.location.protocol + '//localhost:8080/#/landing',
+        successUrl: window.location.protocol + '//https://https//hopeful-meitner-cb550e.netlify.com/#/',
+        cancelUrl: window.location.protocol + '//https://https//hopeful-meitner-cb550e.netlify.com/#/landing',
     })
     .then(function (result) {
       if (result.error) {
