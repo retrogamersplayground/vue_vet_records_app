@@ -57,18 +57,6 @@ export default {
         )
       e.preventDefault()
     }
-     /*saveUser() {
-      db.collection('users')
-        .add({
-          email: this.email,
-          password: this.password,
-          user_id: this.user.uid
-        })
-        console.log(this.user.uid)
-        .then(docRef => this.$router.push('/'))
-        .catch(error => console.log(err))
-        console.log('user saved')
-    }*/
   }
 }
 </script>

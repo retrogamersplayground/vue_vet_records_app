@@ -4,9 +4,6 @@ import Dashboard from '@/components/Dashboard'
 import Login from '@/components/Login'
 import Register from '@/components/Register'
 import ResetPassword from '@/components/ResetPassword'
-import LandingPage from '@/components/LandingPage'
-//import Farm from '@/components/Farm'
-import Payment from '@/components/Payment'
 import AddMare from '@/components/AddMare'
 import ViewMare from '@/components/ViewMare'
 import EditMare from '@/components/EditMare'
@@ -51,29 +48,6 @@ let router = new Router({
       component: ResetPassword,
       meta: {
         requiresGuest: true
-      }
-    },
-    {
-      path: '/landing',
-      name: 'landing-page',
-      component: LandingPage,
-      meta: {
-        requiresGuest: true
-      }
-    },
-    /*{
-      path: '/',
-      name: 'farm',
-      component: Farm,
-      meta: {
-        requiresAuth: true
-      }
-    },*/
-    { path: '/payment',
-      name: 'payment',
-      component: Payment,
-      meta: {
-        requiresAuth: true
       }
     },
     {
@@ -152,7 +126,7 @@ router.beforeEach((to, from, next) => {
     if (!firebase.auth().currentUser) {
       //Go to landing
       next({
-        path: '/landing',
+        path: '/login',
         query: {
           redirect: to.fullPath
         }
@@ -166,7 +140,7 @@ router.beforeEach((to, from, next) => {
     if (firebase.auth().currentUser) {
       //Go to login
       next({
-        path: '/payment',
+        path: '/',
         query: {
           redirect: to.fullPath
         }
