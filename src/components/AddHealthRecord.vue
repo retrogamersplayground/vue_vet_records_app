@@ -158,7 +158,8 @@ export default {
   name: 'add-health-record',
   data() {
     return {
-      user_id: firebase.auth().currentUser,
+      user: firebase.auth().currentUser,
+      user_id: null,
       health_id: 'health_id _' + Math.round(new Date().getTime() / 1000),
       health_id2: 'health_id2' + Math.round(new Date().getTime() / 1000),
       mare_id: null,
@@ -176,6 +177,11 @@ export default {
       teasing: null,
       bred_treatments: null,
       initials: null
+    }
+  },
+  created () {
+    if (this.user !=null) {
+      this.user_id = this.user.uid
     }
   },
   beforeRouteEnter(to, from, next) {
