@@ -8,6 +8,12 @@
         <div class="row">
           <form @submit.prevent="addHealthRecord" class="col s12">
             <div class="row">
+              <label for="user_id">User ID#</label>
+              <div class="input-field col s12">
+                <input disabled type="text" v-model="user_id" id="user_id" required />
+              </div>
+            </div>
+            <div class="row">
               <label for="mare_id">Mare ID#</label>
               <div class="input-field col s12">
                 <input disabled type="text" v-model="mare_id" id="mare_id" required />
