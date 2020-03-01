@@ -151,6 +151,7 @@ export default {
   name: 'add-health-record',
   data() {
     return {
+      user_id: this.$route.params.user_id,
       health_id: 'health_id _' + Math.round(new Date().getTime() / 1000),
       health_id2: 'health_id2' + Math.round(new Date().getTime() / 1000),
       mare_id: null,
@@ -201,6 +202,7 @@ export default {
     addHealthRecord() {
       db.collection('horse_health')
         .add({
+          user_id: this.user_id,
           mare_id: this.mare_id,
           health_id: this.health_id,
           name: this.name,
@@ -215,6 +217,7 @@ export default {
     addHealthRecord2() {
       db.collection('horse_health2')
         .add({
+          user_id: this.user_id,
           mare_id: this.mare_id,
           health_id2: this.health_id2,
           name: this.name,
