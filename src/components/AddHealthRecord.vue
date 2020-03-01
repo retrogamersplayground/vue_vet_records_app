@@ -146,12 +146,13 @@
 </template>
 
 <script>
+import firebase from 'firebase'
 import db from './firebaseInit'
 export default {
   name: 'add-health-record',
   data() {
     return {
-      user_id: this.$route.params.user_id,
+      user_id: firebase.auth().currentUser,
       health_id: 'health_id _' + Math.round(new Date().getTime() / 1000),
       health_id2: 'health_id2' + Math.round(new Date().getTime() / 1000),
       mare_id: null,
